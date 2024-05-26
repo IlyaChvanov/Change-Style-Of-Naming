@@ -2,4 +2,4 @@
 // Created by user on 26.05.2024.
 //
 
-#include "Interfaces/SnakeToCamel.h"
+#include "SnakeToCamel.h"
