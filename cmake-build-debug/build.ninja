@@ -98,9 +98,9 @@ build CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeClasses.cpp.obj: CXX_COMP
   OBJECT_DIR = CMakeFiles\snake_case_to_CamelCase.dir
   OBJECT_FILE_DIR = CMakeFiles\snake_case_to_CamelCase.dir\src
 
-build CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFunctions.c.obj: C_COMPILER__snake_case_to_CamelCase_unscanned_Debug C$:/Users/user/Desktop/change$ style$ of$ naming/src/ChangeFunctions.c || cmake_object_order_depends_target_snake_case_to_CamelCase
-  DEP_FILE = CMakeFiles\snake_case_to_CamelCase.dir\src\ChangeFunctions.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFunctions.cpp.obj: CXX_COMPILER__snake_case_to_CamelCase_unscanned_Debug C$:/Users/user/Desktop/change$ style$ of$ naming/src/ChangeFunctions.cpp || cmake_object_order_depends_target_snake_case_to_CamelCase
+  DEP_FILE = CMakeFiles\snake_case_to_CamelCase.dir\src\ChangeFunctions.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -I"C:/Users/user/Desktop/change style of naming/include"
   OBJECT_DIR = CMakeFiles\snake_case_to_CamelCase.dir
   OBJECT_FILE_DIR = CMakeFiles\snake_case_to_CamelCase.dir\src
@@ -120,7 +120,7 @@ build CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeVariables.cpp.obj: CXX_CO
 #############################################
 # Link the executable snake_case_to_CamelCase.exe
 
-build snake_case_to_CamelCase.exe: CXX_EXECUTABLE_LINKER__snake_case_to_CamelCase_Debug CMakeFiles/snake_case_to_CamelCase.dir/src/main.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/SnakeToCamel.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/CamelToSnake.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFile.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/CreateNewFile.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/AddUnderLineToPrivateFields.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeClasses.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFunctions.c.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeVariables.cpp.obj
+build snake_case_to_CamelCase.exe: CXX_EXECUTABLE_LINKER__snake_case_to_CamelCase_Debug CMakeFiles/snake_case_to_CamelCase.dir/src/main.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/SnakeToCamel.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/CamelToSnake.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFile.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/CreateNewFile.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/AddUnderLineToPrivateFields.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeClasses.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeFunctions.cpp.obj CMakeFiles/snake_case_to_CamelCase.dir/src/ChangeVariables.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\snake_case_to_CamelCase.dir
