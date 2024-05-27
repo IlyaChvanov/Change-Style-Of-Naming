@@ -2,3 +2,7 @@
 6	383	7385292085986824	CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj	b93e4150c7d23851
 0	1452	7385292096656974	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	96015c0302b5e11b
 1456	1693	7385292098746976	change_style_of_naming.exe	76db38a2c2b7fd3d
+14	134	7385293362356230	CMakeFiles/change_style_of_naming.dir/src/Change.cpp.obj	14e9dff900d38bfe
+5	150	7385293362516262	CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj	a0676f2df8b7048f
+11	151	7385293362516262	CMakeFiles/change_style_of_naming.dir/src/Save.cpp.obj	50669b9af20a1aae
+152	390	7385293364856256	change_style_of_naming.exe	98f04bc5b79c45cb

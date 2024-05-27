@@ -5,4 +5,10 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(change_style_of_naming main.cpp
         src/Text.cpp
-        include/Text.h)
+        include/Text.h
+        src/UI.cpp
+        include/UI.h
+        src/Save.cpp
+        include/Save.h
+        src/Change.cpp
+        include/Change.h)

@@ -61,6 +61,24 @@ build CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj: CXX_COMPILER__chan
   OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
   OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
 
+build CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj: CXX_COMPILER__change_style_of_naming_unscanned_Debug C$:/Users/user/Desktop/New$ folder/change-style-of-naming/src/UI.cpp || cmake_object_order_depends_target_change_style_of_naming
+  DEP_FILE = CMakeFiles\change_style_of_naming.dir\src\UI.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
+  OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
+
+build CMakeFiles/change_style_of_naming.dir/src/Save.cpp.obj: CXX_COMPILER__change_style_of_naming_unscanned_Debug C$:/Users/user/Desktop/New$ folder/change-style-of-naming/src/Save.cpp || cmake_object_order_depends_target_change_style_of_naming
+  DEP_FILE = CMakeFiles\change_style_of_naming.dir\src\Save.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
+  OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
+
+build CMakeFiles/change_style_of_naming.dir/src/Change.cpp.obj: CXX_COMPILER__change_style_of_naming_unscanned_Debug C$:/Users/user/Desktop/New$ folder/change-style-of-naming/src/Change.cpp || cmake_object_order_depends_target_change_style_of_naming
+  DEP_FILE = CMakeFiles\change_style_of_naming.dir\src\Change.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
+  OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target change_style_of_naming
@@ -69,7 +87,7 @@ build CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj: CXX_COMPILER__chan
 #############################################
 # Link the executable change_style_of_naming.exe
 
-build change_style_of_naming.exe: CXX_EXECUTABLE_LINKER__change_style_of_naming_Debug CMakeFiles/change_style_of_naming.dir/main.cpp.obj CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj
+build change_style_of_naming.exe: CXX_EXECUTABLE_LINKER__change_style_of_naming_Debug CMakeFiles/change_style_of_naming.dir/main.cpp.obj CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj CMakeFiles/change_style_of_naming.dir/src/Save.cpp.obj CMakeFiles/change_style_of_naming.dir/src/Change.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
