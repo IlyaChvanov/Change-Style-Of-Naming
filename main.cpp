@@ -5,19 +5,12 @@
 
 using std::cin;
 int main() {
-  UI::AskDirectoryPath();
-  std::string DirectoryPath = UI::ReadPath();
+  std::string dir_path;
+  std::string file_path;
+  WhatToChange what_to_change;
+  Style necessary_style;
+  WorkWFile work_w_file;
 
-  UI::AskFilePath();
-  std::string Filepath = UI::ReadPath();
-
-  UI::AskWhatToChange();
-  WhatToChange what_to_change = UI::ReadWhatToChange();
-
-  UI::AskWhichStyleIsNeeded();
-  Style necessary_style = UI::ReadStyle();
-
-  UI::AskChangeOrCreateFile();
-  UI::ReadChangeOrCreateFile();
+  UI::Begin(dir_path, file_path, what_to_change, necessary_style, work_w_file);
   return 0;
 }
