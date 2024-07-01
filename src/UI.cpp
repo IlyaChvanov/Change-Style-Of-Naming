@@ -23,7 +23,9 @@ void UI::AskWhichStyleIsNeeded() {
 }
 
 void UI::AskChangeOrCreateFile() {
-
+  cout << "Create new file or change current:" << '\n';
+  cout << "1: create new" << '\n';
+  cout << "2: change current" << '\n';
 }
 
 std::string UI::ReadPath() {
@@ -68,6 +70,18 @@ Style UI::ReadStyle() {
   } catch (...) {
     cout << "incorrect input, try again" << '\n';
     return ReadStyle();
+  }
+}
+WorkWFile UI::ReadChangeOrCreateFile() {
+  try {
+    switch (UI::AskAndGetNum()) {
+      case 1:return create_new;
+      case 2:return change_current;
+      default:throw UI::IncorrectInput();
+    }
+  } catch (...) {
+    cout << "incorrect input, try again" << '\n';
+    return ReadChangeOrCreateFile();
   }
 }
 

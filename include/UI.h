@@ -20,6 +20,11 @@ enum Style {
   PascalCase
 };
 
+enum WorkWFile {
+  create_new = 1,
+  change_current
+};
+
 class UI {
  public:
   static void AskPath();
@@ -29,7 +34,7 @@ class UI {
   static std::string ReadPath();
   static WhatToChange ReadWhatToChange();
   static Style ReadStyle();
-
+  static WorkWFile ReadChangeOrCreateFile();
   class IncorrectInput {};
 
  private:

@@ -6,14 +6,16 @@
 
 using std::cin;
 int main() {
-  std::string path;
   UI::AskPath();
-  path = UI::ReadPath();
+  std::string path = UI::ReadPath();
 
   UI::AskWhatToChange();
   WhatToChange what_to_change = UI::ReadWhatToChange();
 
   UI::AskWhichStyleIsNeeded();
   Style necessary_style = UI::ReadStyle();
+
+  UI::AskChangeOrCreateFile();
+  UI::ReadChangeOrCreateFile();
   return 0;
 }

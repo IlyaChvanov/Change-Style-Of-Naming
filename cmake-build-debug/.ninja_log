@@ -20,3 +20,7 @@
 1038	1265	7415244042404238	change_style_of_naming.exe	1babd4a6cf13b87e
 6	1436	7415244446725070	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
 1437	1686	7415244449155084	change_style_of_naming.exe	1babd4a6cf13b87e
+8	2203	7415248565800248	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
+20	2445	7415248568330268	CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj	ea4a37f2f68db4fd
+16	2698	7415248571190276	CMakeFiles/change_style_of_naming.dir/src/text.cpp.obj	3c8527f2b99b0502
+2698	3002	7415248574180258	change_style_of_naming.exe	1babd4a6cf13b87e
