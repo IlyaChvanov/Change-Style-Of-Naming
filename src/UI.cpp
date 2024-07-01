@@ -1,5 +1,6 @@
 #include <iostream>
 #include "UI.h"
+#include <numeric>
 
 using std::cout, std::cin;
 
@@ -30,22 +31,28 @@ std::string UI::readPath() {
   return path;
 }
 
+
 WhatToChange UI::readWhatToChange() {
   try {
-    int whatToChange = -1;
-    UI::askWhatToChange();
+    std::string whatToChange;
     cin >> whatToChange;
-    switch (whatToChange) {
+    int key = std::stoi(whatToChange);
+    if (std::to_string(key).length() != whatToChange.length()) {
+      throw UI::IncorrectInput();
+    }
+    switch (std::stoi(whatToChange)) {
       case 1:return variable_names;
       case 2:return function_names;
       case 3:return class_names;
       case 4:return all;
       case 5:return underlines;
-      default:throw IncorrectInput();
+      default:throw UI::IncorrectInput();
     }
-  } catch (const IncorrectInput &) {
+  } catch (UI::IncorrectInput) {
     cout << "incorrect input, try again" << '\n';
-    readWhatToChange();
+    return readWhatToChange();
   }
 }
+
+
 
