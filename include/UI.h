@@ -5,10 +5,27 @@
 #ifndef CHANGE_STYLE_OF_NAMING_UI_H
 #define CHANGE_STYLE_OF_NAMING_UI_H
 
+#include <string>
 
-class UI {
-
+enum WhatToChange {
+  variable_names = 1,
+  function_names,
+  class_names,
+  all,
+  underlines
 };
 
+class UI {
+ public:
+  static void askPath();
+  static void askWhatToChange();
+  static void askWhichStyleIsNeeded();
+  static void askChangeOrCreateFile();
+  static std::string readPath();
+  static WhatToChange readWhatToChange();
+
+ private:
+  class IncorrectInput {};
+};
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H
