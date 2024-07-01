@@ -7,10 +7,10 @@
 using std::cin;
 int main() {
   std::string path;
-  UI::askPath();
-  path = UI::readPath();
+  UI::AskPath();
+  path = UI::ReadPath();
 
-  UI::askWhatToChange();
-  WhatToChange what_to_change = UI::readWhatToChange();
+  UI::AskWhatToChange();
+  WhatToChange what_to_change = UI::ReadWhatToChange();
   return 0;
 }

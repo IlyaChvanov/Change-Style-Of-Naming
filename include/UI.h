@@ -17,15 +17,16 @@ enum WhatToChange {
 
 class UI {
  public:
-  static void askPath();
-  static void askWhatToChange();
-  static void askWhichStyleIsNeeded();
-  static void askChangeOrCreateFile();
-  static std::string readPath();
-  static WhatToChange readWhatToChange();
+  static void AskPath();
+  static void AskWhatToChange();
+  static void AskWhichStyleIsNeeded();
+  static void AskChangeOrCreateFile();
+  static std::string ReadPath();
+  static WhatToChange ReadWhatToChange();
+
+  class IncorrectInput {};
 
  private:
-  class IncorrectInput {};
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H

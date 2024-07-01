@@ -1,14 +1,13 @@
 #include <iostream>
 #include "UI.h"
-#include <numeric>
 
 using std::cout, std::cin;
 
-void UI::askPath() {
+void UI::AskPath() {
   cout << "Enter the path of file you want to change" << '\n';
 }
 
-void UI::askWhatToChange() {
+void UI::AskWhatToChange() {
   cout << "Enter what you want to change:" << '\n';
   cout << "1: variable names" << '\n';
   cout << "2: function names" << '\n';
@@ -17,30 +16,29 @@ void UI::askWhatToChange() {
   cout << "5: add right underline to the private fields" << '\n';
 }
 
-void UI::askWhichStyleIsNeeded() {
+void UI::AskWhichStyleIsNeeded() {
 
 }
 
-void UI::askChangeOrCreateFile() {
+void UI::AskChangeOrCreateFile() {
 
 }
 
-std::string UI::readPath() {
-  std::string path;
-  cin >> path;
-  return path;
+std::string UI::ReadPath() {
+  std::string path_;
+  cin >> path_;
+  return path_;
 }
 
-
-WhatToChange UI::readWhatToChange() {
+WhatToChange UI::ReadWhatToChange() {
   try {
-    std::string whatToChange;
-    cin >> whatToChange;
-    int key = std::stoi(whatToChange);
-    if (std::to_string(key).length() != whatToChange.length()) {
+    std::string what_to_change;
+    cin >> what_to_change;
+    int key = std::stoi(what_to_change);
+    if (std::to_string(key).length() != what_to_change.length()) {
       throw UI::IncorrectInput();
     }
-    switch (std::stoi(whatToChange)) {
+    switch (std::stoi(what_to_change)) {
       case 1:return variable_names;
       case 2:return function_names;
       case 3:return class_names;
@@ -50,7 +48,7 @@ WhatToChange UI::readWhatToChange() {
     }
   } catch (UI::IncorrectInput) {
     cout << "incorrect input, try again" << '\n';
-    return readWhatToChange();
+    return ReadWhatToChange();
   }
 }
 

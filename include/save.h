@@ -6,7 +6,7 @@
 #define CHANGE_STYLE_OF_NAMING_SAVE_H
 
 
-class Save {
+class save {
 
 };
 

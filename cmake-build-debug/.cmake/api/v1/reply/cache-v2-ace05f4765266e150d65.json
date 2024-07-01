@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/user/Desktop/New folder/change-style-of-naming/cmake-build-debug"
+			"value" : "c:/Users/user/Desktop/Git/change-style-of-naming/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/user/Desktop/New folder/change-style-of-naming/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/user/Desktop/Git/change-style-of-naming/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/user/Desktop/New folder/change-style-of-naming"
+			"value" : "C:/Users/user/Desktop/Git/change-style-of-naming"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/user/Desktop/New folder/change-style-of-naming/cmake-build-debug"
+			"value" : "C:/Users/user/Desktop/Git/change-style-of-naming/cmake-build-debug"
 		},
 		{
 			"name" : "change_style_of_naming_IS_TOP_LEVEL",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/user/Desktop/New folder/change-style-of-naming"
+			"value" : "C:/Users/user/Desktop/Git/change-style-of-naming"
 		}
 	],
 	"kind" : "cache",

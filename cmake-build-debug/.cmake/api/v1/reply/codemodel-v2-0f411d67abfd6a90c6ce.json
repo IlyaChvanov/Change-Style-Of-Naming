@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "change_style_of_naming::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-change_style_of_naming-Debug-1e937d7c396a70f3aa72.json",
+					"jsonFile" : "target-change_style_of_naming-Debug-83188bd0962aa4c13583.json",
 					"name" : "change_style_of_naming",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/user/Desktop/New folder/change-style-of-naming/cmake-build-debug",
-		"source" : "C:/Users/user/Desktop/New folder/change-style-of-naming"
+		"build" : "C:/Users/user/Desktop/Git/change-style-of-naming/cmake-build-debug",
+		"source" : "C:/Users/user/Desktop/Git/change-style-of-naming"
 	},
 	"version" : 
 	{

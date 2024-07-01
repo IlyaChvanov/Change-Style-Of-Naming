@@ -1,7 +1,7 @@
 # ninja log v5
-6	383	7385292085986824	CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj	b93e4150c7d23851
-0	1452	7385292096656974	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	96015c0302b5e11b
-152	390	7385293364856256	change_style_of_naming.exe	98f04bc5b79c45cb
-14	134	7385293362356230	CMakeFiles/change_style_of_naming.dir/src/Change.cpp.obj	14e9dff900d38bfe
-5	150	7385293362516262	CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj	a0676f2df8b7048f
-11	151	7385293362516262	CMakeFiles/change_style_of_naming.dir/src/Save.cpp.obj	50669b9af20a1aae
+23	748	7414689465286637	CMakeFiles/change_style_of_naming.dir/src/Text.cpp.obj	a234f252f5732fb3
+7	1013	7415116299774412	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
+1774	2000	7415157420305131	change_style_of_naming.exe	98f04bc5b79c45cb
+749	1130	7414689469216645	CMakeFiles/change_style_of_naming.dir/src/Change.cpp.obj	c0b763280dce0957
+7	1773	7415157418105123	CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj	ea4a37f2f68db4fd
+1131	1360	7414689471796606	CMakeFiles/change_style_of_naming.dir/src/Save.cpp.obj	f8019a378b7e6a67

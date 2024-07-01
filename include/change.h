@@ -6,7 +6,7 @@
 #define CHANGE_STYLE_OF_NAMING_CHANGE_H
 
 
-class Change {
+class change {
 
 };
 
