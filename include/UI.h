@@ -27,10 +27,12 @@ enum WorkWFile {
 
 class UI {
  public:
-  static void AskPath();
+  static void AskFilePath();
+  static void AskDirectoryPath();
   static void AskWhatToChange();
   static void AskWhichStyleIsNeeded();
   static void AskChangeOrCreateFile();
+
   static std::string ReadPath();
   static WhatToChange ReadWhatToChange();
   static Style ReadStyle();

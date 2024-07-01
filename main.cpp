@@ -1,13 +1,15 @@
 #include <iostream>
-#include <fstream>
 #include <string>
 
 #include "UI.h"
 
 using std::cin;
 int main() {
-  UI::AskPath();
-  std::string path = UI::ReadPath();
+  UI::AskDirectoryPath();
+  std::string DirectoryPath = UI::ReadPath();
+
+  UI::AskFilePath();
+  std::string Filepath = UI::ReadPath();
 
   UI::AskWhatToChange();
   WhatToChange what_to_change = UI::ReadWhatToChange();

@@ -3,8 +3,12 @@
 
 using std::cout, std::cin;
 
-void UI::AskPath() {
+void UI::AskFilePath() {
   cout << "Enter the path of file you want to change" << '\n';
+}
+
+void UI::AskDirectoryPath() {
+  cout << "Enter the path of the directory with all declarations" << '\n';
 }
 
 void UI::AskWhatToChange() {
@@ -84,6 +88,7 @@ WorkWFile UI::ReadChangeOrCreateFile() {
     return ReadChangeOrCreateFile();
   }
 }
+
 
 
 
