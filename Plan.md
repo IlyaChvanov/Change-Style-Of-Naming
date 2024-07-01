@@ -1,5 +1,5 @@
 # plan:
-* Parse names of functioins that we mustn't change from https://documentation.help/CppReference/all_cpp_functions.html
+* Ask the path of file (may add directory later)
 * Ask what the user wants to change
 * If it is change private fields than do it
 * Else we ask what style they want to get
