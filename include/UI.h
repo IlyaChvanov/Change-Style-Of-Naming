@@ -14,6 +14,12 @@ enum WhatToChange {
   all
 };
 
+enum Style {
+  snake_case = 1,
+  camelCase,
+  PascalCase
+};
+
 class UI {
  public:
   static void AskPath();
@@ -22,8 +28,12 @@ class UI {
   static void AskChangeOrCreateFile();
   static std::string ReadPath();
   static WhatToChange ReadWhatToChange();
+  static Style ReadStyle();
 
   class IncorrectInput {};
+
+ private:
+  static int AskAndGetNum();
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H

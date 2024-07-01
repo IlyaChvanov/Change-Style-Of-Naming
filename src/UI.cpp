@@ -16,7 +16,10 @@ void UI::AskWhatToChange() {
 }
 
 void UI::AskWhichStyleIsNeeded() {
-
+  cout << "Which style do you need:" << '\n';
+  cout << "1: snake_case" << '\n';
+  cout << "2: camelCase" << '\n';
+  cout << "3: PascalCase" << '\n';
 }
 
 void UI::AskChangeOrCreateFile() {
@@ -29,26 +32,46 @@ std::string UI::ReadPath() {
   return path_;
 }
 
+int UI::AskAndGetNum() {
+  std::string what_to_change;
+  cin >> what_to_change;
+  int key = std::stoi(what_to_change);
+  if (std::to_string(key).length() != what_to_change.length()) {
+    throw UI::IncorrectInput();
+  }
+  return std::stoi(what_to_change);
+}
+
 WhatToChange UI::ReadWhatToChange() {
   try {
-    std::string what_to_change;
-    cin >> what_to_change;
-    int key = std::stoi(what_to_change);
-    if (std::to_string(key).length() != what_to_change.length()) {
-      throw UI::IncorrectInput();
-    }
-    switch (std::stoi(what_to_change)) {
+    switch (UI::AskAndGetNum()) {
       case 1:return variable_names;
       case 2:return function_names;
       case 3:return class_names;
       case 4:return all;
       default:throw UI::IncorrectInput();
     }
-  } catch (UI::IncorrectInput) {
+  } catch (...) {
     cout << "incorrect input, try again" << '\n';
     return ReadWhatToChange();
   }
 }
+
+Style UI::ReadStyle() {
+  try {
+    switch (UI::AskAndGetNum()) {
+      case 1:return snake_case;
+      case 2:return camelCase;
+      case 3:return PascalCase;
+      default:throw UI::IncorrectInput();
+    }
+  } catch (...) {
+    cout << "incorrect input, try again" << '\n';
+    return ReadStyle();
+  }
+}
+
+
 
 
 

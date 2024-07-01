@@ -12,5 +12,8 @@ int main() {
 
   UI::AskWhatToChange();
   WhatToChange what_to_change = UI::ReadWhatToChange();
+
+  UI::AskWhichStyleIsNeeded();
+  Style necessary_style = UI::ReadStyle();
   return 0;
 }
