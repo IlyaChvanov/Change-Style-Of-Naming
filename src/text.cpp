@@ -3,4 +3,4 @@
 //
 
 #include "text.h"
-text::text(const std::string& path) : path(path) {}
+Text::Text(const std::string& path) : path(path) {}

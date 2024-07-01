@@ -11,8 +11,7 @@ enum WhatToChange {
   variable_names = 1,
   function_names,
   class_names,
-  all,
-  underlines
+  all
 };
 
 class UI {
@@ -25,8 +24,6 @@ class UI {
   static WhatToChange ReadWhatToChange();
 
   class IncorrectInput {};
-
- private:
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H

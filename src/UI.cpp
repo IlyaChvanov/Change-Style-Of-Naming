@@ -13,7 +13,6 @@ void UI::AskWhatToChange() {
   cout << "2: function names" << '\n';
   cout << "3: class names" << '\n';
   cout << "4: everything above" << '\n';
-  cout << "5: add right underline to the private fields" << '\n';
 }
 
 void UI::AskWhichStyleIsNeeded() {
@@ -43,7 +42,6 @@ WhatToChange UI::ReadWhatToChange() {
       case 2:return function_names;
       case 3:return class_names;
       case 4:return all;
-      case 5:return underlines;
       default:throw UI::IncorrectInput();
     }
   } catch (UI::IncorrectInput) {
