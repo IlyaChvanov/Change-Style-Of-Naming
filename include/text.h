@@ -19,6 +19,7 @@ class Text {
   Text(const std::string& path);
  private:
   std::string text_;
+  ObjectsToChange objects_;
   void SetTextFromFile(const std::string& path);
 };
 
