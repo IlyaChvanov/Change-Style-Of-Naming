@@ -24,11 +24,11 @@ class Text {
 
 class GetObjectsToChange {
  public:
-  static void TraverseDirectory(const std::string& root,
+  static void TraverseDirectory(std::string& root,
                                 WhatToChange what_to_change,
                                 ObjectsToChange& objects_to_change);
  private:
-  static void GetFiles(const std::string& root,
+  static void GetFiles(std::string& root,
                        std::vector<std::string>& files);
 
 };

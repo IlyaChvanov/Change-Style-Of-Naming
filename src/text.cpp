@@ -16,7 +16,7 @@ void Text::SetTextFromFile(const std::string& path) {
       throw UI::IncorrectInput();
     }
 }
-void GetObjectsToChange::TraverseDirectory(const std::string& root,
+void GetObjectsToChange::TraverseDirectory(std::string& root,
                                            WhatToChange what_to_change,
                                            ObjectsToChange& objects_to_change) {
   std::vector<std::string> files;
@@ -37,13 +37,21 @@ void GetObjectsToChange::TraverseDirectory(const std::string& root,
   }
 }
 
-void GetObjectsToChange::GetFiles(const std::string& root,
+void GetObjectsToChange::GetFiles(std::string& root,
                                   std::vector<std::string>& files) {
-  for (const auto& file : std::filesystem::directory_iterator(root)) {
-    if (std::filesystem::is_directory(file)) {
-      GetFiles(file.path().string(), files);
-    } else if (HelpingFunctions::IsProgrammingFile(file.path().string())) {
+  try {
+    for (auto& file : std::filesystem::directory_iterator(root)) {
+      if (std::filesystem::is_directory(file)) {
+        std::string  fp =  file.path().string();
+        GetFiles(fp, files);
+      } else if (HelpingFunctions::IsProgrammingFile(file.path().string())) {
         files.emplace_back(file.path().string());
+      }
     }
+  } catch (std::filesystem::__cxx11::filesystem_error&) {
+    std::cout << "incorrect path of project enter it again" << '\n';
+    UI::AskDirectoryPath();
+    root = UI::ReadPath();
+    GetFiles(root, files);
   }
 }

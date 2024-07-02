@@ -16,7 +16,8 @@ int main() {
 //
 //  auto text = HelpingFunctions::MakeTextObject(file_path);
 //
+  std::string string = "C:\\Users\\user\\Desktop\\Git\\change-style-of-namin";
    ObjectsToChange obj;
-   GetObjectsToChange::TraverseDirectory("C:\\Users\\user\\Desktop\\Git\\change-style-of-naming", variable_names, obj);
+   GetObjectsToChange::TraverseDirectory(string, variable_names, obj);
   return 0;
 }
