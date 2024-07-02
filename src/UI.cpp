@@ -8,7 +8,7 @@ void UI::AskFilePath() {
 }
 
 void UI::AskDirectoryPath() {
-  cout << "Enter the path of the directory with all declarations" << '\n';
+  cout << "Enter the path to the root of the project" << '\n';
 }
 
 void UI::AskWhatToChange() {
@@ -94,7 +94,7 @@ void UI::AskIsCorrect(std::string& DirPath,
                       Style& necessary_style,
                       WorkWFile& read_or_make) {
   cout << "\n";
-  cout << "Directory with declarations: " << DirPath << '\n';
+  cout << "Path to the root of the project: " << DirPath << '\n';
   cout << "File path: " << FilePath << '\n';
   cout << "You want to change: ";
   PrintWhatToChange(what_to_change);
@@ -105,7 +105,7 @@ void UI::AskIsCorrect(std::string& DirPath,
   cout << '\n';
   cout << "Do you want to change something?" << '\n';
   cout << "0: No" << '\n';
-  cout << "1: Directory path" << '\n';
+  cout << "1: Path of root of the project" << '\n';
   cout << "2: File for changing" << '\n';
   cout << "3: Objects for changing" << '\n';
   cout << "4: Necessary style" << '\n';
@@ -114,13 +114,13 @@ void UI::AskIsCorrect(std::string& DirPath,
 }
 
 void UI::PrintWhatToChange(WhatToChange what_to_change) {
-  cout << what_to_change_[what_to_change] << '\n';
+  cout << what_to_change_.at(what_to_change) << '\n';
 }
 void UI::PrintNecessaryStyle(Style style) {
-  cout << style_[style] << '\n';
+  cout << style_.at(style) << '\n';
 }
 void UI::PrintReadOrMake(WorkWFile read_or_make) {
-  cout << work_w_file_[read_or_make] << '\n';
+  cout << work_w_file_.at(read_or_make) << '\n';
 }
 void UI::ChangeCorrectness(std::string& dir_path,
                            std::string& file_path,
@@ -188,9 +188,3 @@ void UI::Begin(std::string& dir_path,
   UI::ChangeCorrectness(dir_path, file_path, what_to_change,
                         necessary_style,work_with_file);
 }
-
-
-
-
-
-

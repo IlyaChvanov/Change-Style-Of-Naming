@@ -48,14 +48,14 @@ class UI {
   class IncorrectInput {};
 
  private:
-  static inline std::unordered_map<WhatToChange, std::string> what_to_change_ = {
+  static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
       {variable_names, "variable names"},
       {function_names, "function names"},
       {class_names, "class names"},
       {all, "all"}
   };
 
-  static inline std::unordered_map<Style, std::string> style_ = {
+  static inline const std::unordered_map<Style, std::string> style_ = {
       {snake_case, "snake_case"},
       {camelCase, "camelCase"},
       {PascalCase, "PascalCase"}
