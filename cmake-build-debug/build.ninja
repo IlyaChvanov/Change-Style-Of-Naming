@@ -84,6 +84,13 @@ build CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj: CXX_COMPILER__ch
   OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
   OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
 
+build CMakeFiles/change_style_of_naming.dir/src/helpingFunctions.cpp.obj: CXX_COMPILER__change_style_of_naming_unscanned_Debug C$:/Users/user/Desktop/Git/change-style-of-naming/src/helpingFunctions.cpp || cmake_object_order_depends_target_change_style_of_naming
+  DEP_FILE = CMakeFiles\change_style_of_naming.dir\src\helpingFunctions.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/user/Desktop/Git/change-style-of-naming/include
+  OBJECT_DIR = CMakeFiles\change_style_of_naming.dir
+  OBJECT_FILE_DIR = CMakeFiles\change_style_of_naming.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target change_style_of_naming
@@ -92,7 +99,7 @@ build CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj: CXX_COMPILER__ch
 #############################################
 # Link the executable change_style_of_naming.exe
 
-build change_style_of_naming.exe: CXX_EXECUTABLE_LINKER__change_style_of_naming_Debug CMakeFiles/change_style_of_naming.dir/main.cpp.obj CMakeFiles/change_style_of_naming.dir/src/text.cpp.obj CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj CMakeFiles/change_style_of_naming.dir/src/save.cpp.obj CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj
+build change_style_of_naming.exe: CXX_EXECUTABLE_LINKER__change_style_of_naming_Debug CMakeFiles/change_style_of_naming.dir/main.cpp.obj CMakeFiles/change_style_of_naming.dir/src/text.cpp.obj CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj CMakeFiles/change_style_of_naming.dir/src/save.cpp.obj CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj CMakeFiles/change_style_of_naming.dir/src/helpingFunctions.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\change_style_of_naming.dir

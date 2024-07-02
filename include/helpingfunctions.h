@@ -7,17 +7,12 @@
 
 #include "text.h"
 
+#include <iostream>
+
 class HelpingFunctions {
  public:
-  static Text MakeTextObject(std::string& file_path) {
-    try {
-      return {file_path};
-    } catch (UI::IncorrectInput&) {
-      std::cout << "file doesn't exist" << '\n';
-      UI::AskFilePath();
-      file_path = UI::ReadPath();
-      return MakeTextObject(file_path);
-    }
-  }
+  static Text MakeTextObject(std::string& file_path);
+  static std::string GetExtension(const std::string& file);
+  static bool IsProgrammingFile(const std::string& file);
 };
 #endif //CHANGE_STYLE_OF_NAMING_INCLUDE_HELPINGFUNCTIONS_H_

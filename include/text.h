@@ -4,8 +4,9 @@
 #include "UI.h"
 
 #include "unordered_set"
-#include "filesystem"
-#include "fstream"
+#include <filesystem>
+#include <fstream>
+#include <vector>
 
 struct ObjectsToChange {
   std::unordered_set<std::string> variables_;
@@ -15,16 +16,21 @@ struct ObjectsToChange {
 
 class Text {
  public:
-  friend class GetObjectsToChange;
   Text(const std::string& path);
  private:
   std::string text_;
-  ObjectsToChange objects_;
   void SetTextFromFile(const std::string& path);
 };
 
 class GetObjectsToChange {
-  static void TraverseDirectory(const std::string& root);
+ public:
+  static void TraverseDirectory(const std::string& root,
+                                WhatToChange what_to_change,
+                                ObjectsToChange& objects_to_change);
+ private:
+  static void GetFiles(const std::string& root,
+                       std::vector<std::string>& files);
+
 };
 
 
