@@ -5,6 +5,7 @@
 
 #include "unordered_set"
 #include "filesystem"
+#include "fstream"
 
 struct ObjectsToChange {
   std::unordered_set<std::string> variables_;
@@ -18,12 +19,11 @@ class Text {
   Text(const std::string& path);
  private:
   std::string text_;
-  std::string path_;
-  ObjectsToChange objects_;
+  void SetTextFromFile(const std::string& path);
 };
 
 class GetObjectsToChange {
-  static void Traverse(const std::string& root);
+  static void TraverseDirectory(const std::string& root);
 };
 
 

@@ -180,11 +180,11 @@ void UI::Begin(std::string& dir_path,
   necessary_style = UI::ReadStyle();
 
   UI::AskChangeOrCreateFile();
-  WorkWFile work_with_file = UI::ReadChangeOrCreateFile();
+  read_or_make = UI::ReadChangeOrCreateFile();
 
   UI::AskIsCorrect(dir_path, file_path, what_to_change,
-                   necessary_style,work_with_file);
+                   necessary_style,read_or_make);
 
   UI::ChangeCorrectness(dir_path, file_path, what_to_change,
-                        necessary_style,work_with_file);
+                        necessary_style, read_or_make);
 }
