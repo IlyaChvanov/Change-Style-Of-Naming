@@ -182,7 +182,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "include/helpingfunctions.h",
+			"path" : "include/helpingFunctions.h",
 			"sourceGroupIndex" : 1
 		},
 		{

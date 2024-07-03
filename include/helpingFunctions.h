@@ -14,5 +14,10 @@ class HelpingFunctions {
   static Text MakeTextObject(std::string& file_path);
   static std::string GetExtension(const std::string& file);
   static bool IsProgrammingFile(const std::string& file);
+  static Texts MakeTextsFromFiles(const std::vector<std::string>& files);
+  static void TraverseDirectory(std::string& root);
+ private:
+  static void GetFiles(std::string& root,
+                       std::vector<std::string>& files);
 };
 #endif //CHANGE_STYLE_OF_NAMING_INCLUDE_HELPINGFUNCTIONS_H_

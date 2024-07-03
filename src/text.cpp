@@ -3,7 +3,7 @@
 //
 
 #include "text.h"
-#include "helpingfunctions.h"
+#include "helpingFunctions.h"
 
 Text::Text(const std::string& path) {
   SetTextFromFile(path);
@@ -16,42 +16,6 @@ void Text::SetTextFromFile(const std::string& path) {
       throw UI::IncorrectInput();
     }
 }
-void GetObjectsToChange::TraverseDirectory(std::string& root,
-                                           WhatToChange what_to_change,
-                                           ObjectsToChange& objects_to_change) {
-  std::vector<std::string> files;
-  GetFiles(root, files);
-  switch (what_to_change) {
-    case variable_names: {
-      break;
-    }
-    case function_names: {
-      break;
-    }
-    case class_names: {
-      break;
-    }
-    case all: {
-      break;
-    }
-  }
-}
 
-void GetObjectsToChange::GetFiles(std::string& root,
-                                  std::vector<std::string>& files) {
-  try {
-    for (auto& file : std::filesystem::directory_iterator(root)) {
-      if (std::filesystem::is_directory(file)) {
-        std::string  fp =  file.path().string();
-        GetFiles(fp, files);
-      } else if (HelpingFunctions::IsProgrammingFile(file.path().string())) {
-        files.emplace_back(file.path().string());
-      }
-    }
-  } catch (std::filesystem::__cxx11::filesystem_error&) {
-    std::cout << "incorrect path of project enter it again" << '\n';
-    UI::AskDirectoryPath();
-    root = UI::ReadPath();
-    GetFiles(root, files);
-  }
-}
+//GetObjectsToChange::GetObjectsToChange(Texts& texts) : texts_(texts){}
+//GetObjectsToChange::GetObjectsToChange() {}

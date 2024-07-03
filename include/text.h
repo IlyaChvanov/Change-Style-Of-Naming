@@ -22,15 +22,15 @@ class Text {
   void SetTextFromFile(const std::string& path);
 };
 
-class GetObjectsToChange {
- public:
-  static void TraverseDirectory(std::string& root,
-                                WhatToChange what_to_change,
-                                ObjectsToChange& objects_to_change);
- private:
-  static void GetFiles(std::string& root,
-                       std::vector<std::string>& files);
 
+using Texts = std::vector<Text>;
+class Project {
+ private:
+  Texts texts_;
+ public:
+  std::unordered_set<std::string> GetVariables();
+  std::unordered_set<std::string> GetFunctions();
+  std::unordered_set<std::string> Getclasses();
 };
 
 

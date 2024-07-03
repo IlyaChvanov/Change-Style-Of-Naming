@@ -23,6 +23,14 @@ enum WorkWFile {
   change_current
 };
 
+struct UserInput {
+  std::string& dir_path;
+  std::string& file_path;
+  WhatToChange& what_to_change;
+  Style necessary_style;
+  WorkWFile read_or_make;
+};
+
 class UI {
  public:
   static void AskFilePath();
@@ -30,20 +38,14 @@ class UI {
   static void AskWhatToChange();
   static void AskWhichStyleIsNeeded();
   static void AskChangeOrCreateFile();
-  static void AskIsCorrect(std::string& DirPath, std::string& FilePath,
-                           WhatToChange& what_to_change, Style& necessary_style,
-                           WorkWFile& read_or_make);
+  static void AskIsCorrect(const UserInput&);
 
   static std::string ReadPath();
   static WhatToChange ReadWhatToChange();
   static Style ReadStyle();
   static WorkWFile ReadChangeOrCreateFile();
 
-  static void Begin(std::string& dir_path,
-                    std::string& file_path,
-                    WhatToChange& what_to_change,
-                    Style& necessary_style,
-                    WorkWFile& read_or_make);
+  static UserInput Begin();
 
   class IncorrectInput {};
 
@@ -67,14 +69,10 @@ class UI {
   };
 
   static int AskAndGetNum();
-  static void PrintWhatToChange(WhatToChange what_to_change);
+  static void PrintWhatToChange(WhatToChange& what_to_change);
   static void PrintNecessaryStyle(Style style);
   static void PrintReadOrMake(WorkWFile read_or_make);
-  static void ChangeCorrectness(std::string& dir_path,
-                                std::string& file_path,
-                                WhatToChange& what_to_change,
-                                Style& necessary_style,
-                                WorkWFile& read_or_make);
+  static void ChangeCorrectness(UserInput& input);
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H

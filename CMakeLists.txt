@@ -12,8 +12,8 @@ add_executable(change_style_of_naming main.cpp
         include/save.h
         src/change.cpp
         include/change.h
-        include/helpingfunctions.h
-        include/helpingfunctions.h
+        include/helpingFunctions.h
+        include/helpingFunctions.h
         src/helpingFunctions.cpp
         src/helpingFunctions.cpp
 )
