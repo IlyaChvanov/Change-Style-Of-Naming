@@ -32,13 +32,6 @@ Texts HelpingFunctions::MakeTextsFromFiles(
   return texts;
 }
 
-void HelpingFunctions::TraverseDirectory(std::string& root) {
-  std::vector<std::string> files;
-  GetFiles(root, files);
-  Texts texts = HelpingFunctions::MakeTextsFromFiles(files);
-}
-
-
 void HelpingFunctions::GetFiles(std::string& root,
                                   std::vector<std::string>& files) {
   try {

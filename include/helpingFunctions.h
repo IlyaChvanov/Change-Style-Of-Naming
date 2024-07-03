@@ -15,8 +15,7 @@ class HelpingFunctions {
   static std::string GetExtension(const std::string& file);
   static bool IsProgrammingFile(const std::string& file);
   static Texts MakeTextsFromFiles(const std::vector<std::string>& files);
-  static void TraverseDirectory(std::string& root);
- private:
+  static Texts GetTextsFromAllFiles(std::string& root);
   static void GetFiles(std::string& root,
                        std::vector<std::string>& files);
 };

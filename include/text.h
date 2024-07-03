@@ -25,12 +25,13 @@ class Text {
 
 using Texts = std::vector<Text>;
 class Project {
- private:
-  Texts texts_;
  public:
+  Project(std::string& path);
   std::unordered_set<std::string> GetVariables();
   std::unordered_set<std::string> GetFunctions();
   std::unordered_set<std::string> Getclasses();
+ private:
+  Texts texts_;
 };
 
 

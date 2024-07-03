@@ -19,3 +19,8 @@ void Text::SetTextFromFile(const std::string& path) {
 
 //GetObjectsToChange::GetObjectsToChange(Texts& texts) : texts_(texts){}
 //GetObjectsToChange::GetObjectsToChange() {}
+Project::Project(std::string& path) {
+  std::vector<std::string> files;
+  HelpingFunctions::GetFiles(path, files);
+  texts_ = HelpingFunctions::MakeTextsFromFiles(files);
+}

@@ -120,7 +120,7 @@ void UI::PrintReadOrMake(WorkWFile read_or_make) {
 }
 void UI::ChangeCorrectness(UserInput& input) {
   switch (AskAndGetNum()) {
-    case 0: return;
+    case 0: break;
     case 1: {
       AskDirectoryPath();
       input.dir_path = ReadPath();
