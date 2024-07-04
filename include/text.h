@@ -8,7 +8,9 @@
 #include <filesystem>
 #include <fstream>
 #include <vector>
-
+#include <regex>
+#include <string>
+#include <iostream>
 
 struct ObjectsToChange {
   std::unordered_set<std::string> variables_;
@@ -19,9 +21,7 @@ struct ObjectsToChange {
 class Text {
  public:
   Text(const std::string& path);
-  std::vector<std::string> text_;
-  std::string::const_iterator begin() const;
-  std::string::const_iterator end() const;
+  std::vector<std::string> strings_;
  private:
   void SetTextFromFile(const std::string& path);
 };
