@@ -3,10 +3,12 @@
 
 #include "UI.h"
 
+#include "algorithm"
 #include "unordered_set"
 #include <filesystem>
 #include <fstream>
 #include <vector>
+
 
 struct ObjectsToChange {
   std::unordered_set<std::string> variables_;
@@ -17,21 +19,23 @@ struct ObjectsToChange {
 class Text {
  public:
   Text(const std::string& path);
+  std::vector<std::string> text_;
+  std::string::const_iterator begin() const;
+  std::string::const_iterator end() const;
  private:
-  std::string text_;
   void SetTextFromFile(const std::string& path);
 };
-
 
 using Texts = std::vector<Text>;
 class Project {
  public:
   Project(std::string& path);
-  std::unordered_set<std::string> GetVariables();
-  std::unordered_set<std::string> GetFunctions();
-  std::unordered_set<std::string> Getclasses();
+  void FindAndSetVariables();
+  void FindAndSetFunctions();
+  void FindAndSetClasses();
  private:
-  Texts texts_;
+  ObjectsToChange objects_;
+  Texts texts_from_files_;
 };
 
 
