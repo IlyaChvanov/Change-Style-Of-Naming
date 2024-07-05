@@ -5,10 +5,10 @@
 using std::cin;
 int main() {
 
-//  auto input = UI::Begin();
-//  auto pr = Project(input.dir_path);
+  auto input = UI::Begin();
+  auto pr = Project(input.dir_path);
 
-//  pr.FindAndSetClasses();
+  pr.FindAndSetClasses();
 //  std::string a("class MAIN {sdasd}");
 //std::regex word_regex("([A-Za-z0-9_ \\f\\n\\r\\t\\v]*)"
 //                        "(class )"

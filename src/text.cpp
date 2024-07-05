@@ -26,7 +26,7 @@ std::regex class_regex("([A-Za-z0-9_ \\f\\n\\r\\t\\v]*)"
                       "(class )"
                       "([\\w-]+[\\s]*)"
                       "([{]*)"
-                      "([\\w]*)([}]*)");
+                      "([\\w]*)([};]*)");
   for (const auto& strings : texts_from_files_) {
     for (const auto& str : strings.strings_) {
       std::cmatch result;
