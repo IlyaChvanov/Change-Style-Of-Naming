@@ -20,21 +20,41 @@ Project::Project(std::string& path) {
   HelpingFunctions::GetFiles(path, files);
   texts_from_files_ = HelpingFunctions::MakeTextsFromFiles(files);
 }
-//
-void Project::FindAndSetClasses() {
-std::regex class_regex("([A-Za-z0-9_ \\f\\n\\r\\t\\v]*)"
-                      "(class )"
-                      "([\\w-]+[\\s]*)"
-                      "([{]*)"
-                      "([\\w]*)([};]*)");
+
+void Project::FindAndPush(const std::regex& regex,
+                          std::unordered_set<std::string>& where_push,
+                          int pos_of_pushing) {
+
   for (const auto& strings : texts_from_files_) {
     for (const auto& str : strings.strings_) {
       std::cmatch result;
-      if(std::regex_match(str.c_str(), result, class_regex)) {
-        std::cout<<str<<' ' << result[3] << '\n';
-        objects_.classes_.insert(result[3]);
+      if (std::regex_match(str.c_str(), result, regex)) {
+        std::cout << str << ' ' << result[pos_of_pushing] << '\n';
+        where_push.insert(result[pos_of_pushing]);
       }
     }
   }
 }
 
+void Project::FindAndPushClasses() {
+  std::regex class_regex("([\\w-]*[\\s]*)"
+                         "(class )"
+                         "([\\w-]+[\\s]*)"
+                         "([{]*)"
+                         "([\\w]*)([};]*)");
+  FindAndPush(class_regex, objects_.classes_, 3);
+}
+
+void Project::FindAndPushVariables() {
+  std::regex var_regex("([\\s]*[\\w-]+[\\s]+)" // type
+                       "([\\w]+)" // name
+                       "(.*;)");
+  FindAndPush(var_regex, objects_.variables_, 2);
+}
+void Project::FindAndPushFunctions() {
+  std::regex function_regex("([\\s]*[\\w-]+[\\s]+)" // type
+                       "([\\w]+)"
+                       "([(]+.*[)]*)"
+                       "[^;]");
+  FindAndPush(function_regex, objects_.functions_, 3);
+}

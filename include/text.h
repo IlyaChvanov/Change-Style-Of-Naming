@@ -30,10 +30,13 @@ using Texts = std::vector<Text>;
 class Project {
  public:
   Project(std::string& path);
-  void FindAndSetVariables();
-  void FindAndSetFunctions();
-  void FindAndSetClasses();
+  void FindAndPushVariables();
+  void FindAndPushFunctions();
+  void FindAndPushClasses();
  private:
+  void FindAndPush(const std::regex& regex,
+                   std::unordered_set<std::string>& where_push,
+                   int pos_of_pushing);
   ObjectsToChange objects_;
   Texts texts_from_files_;
 };
