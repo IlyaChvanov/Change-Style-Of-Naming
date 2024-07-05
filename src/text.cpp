@@ -36,25 +36,21 @@ void Project::FindAndPush(const std::regex& regex,
   }
 }
 
+//DOESN't WORK
 void Project::FindAndPushClasses() {
-  std::regex class_regex("([\\w-]*[\\s]*)"
-                         "(class )"
-                         "([\\w-]+[\\s]*)"
-                         "([{]*)"
-                         "([\\w]*)([};]*)");
+  std::regex class_regex("");
   FindAndPush(class_regex, objects_.classes_, 3);
 }
-
+//DOESN't WORK
 void Project::FindAndPushVariables() {
-  std::regex var_regex("([\\s]*[\\w-]+[\\s]+)" // type
-                       "([\\w]+)" // name
-                       "(.*;)");
+  std::regex var_regex("");
   FindAndPush(var_regex, objects_.variables_, 2);
 }
+
 void Project::FindAndPushFunctions() {
   std::regex function_regex("([\\s]*[\\w-]+[\\s]+)" // type
                        "([\\w]+)"
                        "([(]+.*[)]*)"
                        "[^;]");
-  FindAndPush(function_regex, objects_.functions_, 3);
+  FindAndPush(function_regex, objects_.functions_, 2);
 }

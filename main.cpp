@@ -4,17 +4,19 @@
 
 using std::cin;
 int main() {
-//
+
 //  auto input = UI::Begin();
 //  auto pr = Project(input.dir_path);
-//
-//  pr.FindAndPushClasses();
 
-  std::string a("void f() {const }");
-  std::regex var_regex("([\\s]*[\\w-]+[\\s]+)" // type
-                       "([\\w]+)" // name
-                       "([(]+.*[)]*)"
-                       "[^;]"); //value
+//  pr.FindAndPushClasses();
+//  pr.FindAndPushFunctions();
+//  pr.FindAndPushVariables();
+
+  std::string a("const int a;");
+  std::regex var_regex("([\\w\\s]*)"
+                       "([\\w-]*)"
+                       "([\\s]*)"
+                       "([;]{1})"); //value
 
   std::cmatch res;
   std::regex_match(a.c_str(),res, var_regex);
