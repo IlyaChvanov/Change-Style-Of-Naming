@@ -60,18 +60,3 @@ void Project::FindAndPushFunctions() {
   std::regex function_regex("");
   FindAndPush(function_regex, objects_.functions_, 2);
 }
-void Project::ChangeClasses() {
-  FindAndPushClasses();
-  for (auto& text : texts_from_files_) {
-    for (auto& str : text) {
-      std::string new_str;
-      std::regex rx("\\b\\w+\\b");
-      std::sregex_iterator it(str.begin(), str.end(), rx);
-      std::sregex_iterator end;
-      for (; it != end; ++it) {
-        std::smatch match = *it;
-        new_str += match.str();
-      }
-    }
-  }
-}
