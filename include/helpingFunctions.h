@@ -5,7 +5,7 @@
 #ifndef CHANGE_STYLE_OF_NAMING_INCLUDE_HELPINGFUNCTIONS_H_
 #define CHANGE_STYLE_OF_NAMING_INCLUDE_HELPINGFUNCTIONS_H_
 
-#include "text.h"
+#include "project.h"
 
 #include <iostream>
 
