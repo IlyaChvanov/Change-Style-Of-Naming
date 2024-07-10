@@ -2,6 +2,7 @@
 #define CHANGE_STYLE_OF_NAMING_TEXT_H
 
 #include "UI.h"
+#include "change.h"
 
 #include "algorithm"
 #include "unordered_set"
@@ -29,12 +30,9 @@ class Text {
 };
 
 using Texts = std::vector<Text>;
-class Project {
+class Project : public Change {
  public:
-  Project(std::string& path);
-  void ChangeClasses();
-  void ChangeVariables();
-  void ChangeFunctions();
+  Project(UserInput& input);
  private:
   void FindAndPushVariables();
   void FindAndPushFunctions();

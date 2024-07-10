@@ -21,9 +21,10 @@ std::vector<std::string>::iterator Text::end() {
   return strings_.end();
 }
 
-Project::Project(std::string& path) {
+Project::Project(UserInput& input) {
+  Change(input.necessary_style);
   std::vector<std::string> files;
-  HelpingFunctions::GetFiles(path, files);
+  HelpingFunctions::GetFiles(input.dir_path, files);
   texts_from_files_ = HelpingFunctions::MakeTextsFromFiles(files);
 }
 
