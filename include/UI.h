@@ -1,4 +1,3 @@
-
 #ifndef CHANGE_STYLE_OF_NAMING_UI_H
 #define CHANGE_STYLE_OF_NAMING_UI_H
 
@@ -26,7 +25,7 @@ enum WorkWFile {
 struct UserInput {
   std::string dir_path;
   std::string file_path;
-  WhatToChange& what_to_change;
+  WhatToChange what_to_change;
   Style necessary_style;
   WorkWFile read_or_make;
 };
