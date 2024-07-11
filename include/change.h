@@ -5,7 +5,7 @@
 
 class Change {
  public:
-  Change(const Style necessary_style);
+  Change(Style necessary_style);
   void ChangeClasses();
   void ChangeVariables();
   void ChangeFunctions();
