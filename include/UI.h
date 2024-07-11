@@ -46,7 +46,7 @@ class UI {
 
   static UserInput Begin();
 
-  class IncorrectInput {};
+class IncorrectInput : public std::exception {};
 
  private:
   static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
