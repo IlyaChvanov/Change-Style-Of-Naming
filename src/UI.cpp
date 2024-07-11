@@ -109,7 +109,7 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << "6: All" << '\n';
 }
 
-void UI::PrintWhatToChange(WhatToChange what_to_change) {
+void UI::PrintWhatToChange(WhatToChange& what_to_change) {
   cout << what_to_change_.at(what_to_change) << '\n';
 }
 void UI::PrintNecessaryStyle(Style style) {
