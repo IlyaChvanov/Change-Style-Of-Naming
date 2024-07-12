@@ -1,14 +1,10 @@
 #include "helpingFunctions.h"
 
-Text HelpingFunctions::MakeTextObject(std::string& file_path) {
-  try {
-    return {file_path};
-  } catch (UI::IncorrectInput&) {
-    std::cout << "file doesn't exist" << '\n';
-    UI::AskFilePath();
-    file_path = UI::ReadPath();
-    return MakeTextObject(file_path);
-  }
+std::string HelpingFunctions::GetTextFromFile(const std::string& file_path) {
+    std::ifstream file(file_path);
+    std::string to_return;
+    std::getline(file, to_return, '\0');
+    return to_return;
 }
 std::string HelpingFunctions::GetExtension(const std::string& file) {
   return file.substr(file.find_last_of('.') + 1);
@@ -26,8 +22,8 @@ Texts HelpingFunctions::MakeTextsFromFiles(
     const std::vector<std::string>& files) {
   Texts texts;
   texts.reserve(files.size());
-  for (const auto& file : files) {
-    texts.emplace_back(file);
+  for (auto& file : files) {
+    texts.emplace_back(GetTextFromFile(file));
   }
   return texts;
 }

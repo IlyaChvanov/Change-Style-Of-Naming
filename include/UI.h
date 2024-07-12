@@ -46,7 +46,7 @@ class UI {
 
   static UserInput Begin();
 
-class IncorrectInput : public std::exception {};
+  class IncorrectInput : public std::exception {};
 
  private:
   static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
@@ -68,7 +68,7 @@ class IncorrectInput : public std::exception {};
   };
 
   static int AskAndGetNum();
-  static void PrintWhatToChange(WhatToChange& what_to_change);
+  static void PrintWhatToChange(WhatToChange what_to_change);
   static void PrintNecessaryStyle(Style style);
   static void PrintReadOrMake(WorkWFile read_or_make);
   static void ChangeCorrectness(UserInput& input);

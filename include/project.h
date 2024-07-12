@@ -19,17 +19,7 @@ struct ObjectsToChange {
   std::unordered_set<std::string> classes_;
 };
 
-class Text {
- public:
-  Text(const std::string& path);
-  std::vector<std::string> strings_;
-  std::vector<std::string>::iterator begin();
-  std::vector<std::string>::iterator end();
- private:
-  void SetTextFromFile(const std::string& path);
-};
-
-using Texts = std::vector<Text>;
+using Texts = std::vector<std::string>;
 class Project : public Change {
  public:
   Project(UserInput& input);

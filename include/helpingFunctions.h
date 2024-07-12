@@ -7,7 +7,7 @@
 
 class HelpingFunctions {
  public:
-  static Text MakeTextObject(std::string& file_path);
+  static std::string GetTextFromFile(const std::string& file_path);
   static std::string GetExtension(const std::string& file);
   static bool IsProgrammingFile(const std::string& file);
   static Texts MakeTextsFromFiles(const std::vector<std::string>& files);

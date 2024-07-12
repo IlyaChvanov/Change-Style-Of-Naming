@@ -1,26 +1,6 @@
 #include "project.h"
 #include "helpingFunctions.h"
 
-Text::Text(const std::string& path) {
-  SetTextFromFile(path);
-}
-void Text::SetTextFromFile(const std::string& path) {
-    std::ifstream file(path);
-    std::string str;
-    if (file.is_open()) {
-      while(std::getline(file, str, '\n'))
-        strings_.push_back(str);
-    } else {
-      throw UI::IncorrectInput();
-    }
-}
-std::vector<std::string>::iterator Text::begin() {
-  return strings_.begin();
-}
-std::vector<std::string>::iterator Text::end() {
-  return strings_.end();
-}
-
 Project::Project(UserInput& input) : Change(input.necessary_style) {
   std::vector<std::string> files;
   HelpingFunctions::GetFiles(input.dir_path, files);
@@ -32,12 +12,11 @@ void Project::FindAndPush(const std::regex& regex,
                           int pos_of_pushing) {
 
   for (const auto& strings : texts_from_files_) {
-    for (const auto& str : strings.strings_) {
-      std::cmatch result;
-      if (std::regex_match(str.c_str(), result, regex)) {
-        std::cout << str << ' ' << result[pos_of_pushing] << '\n';
-        where_push.insert(result[pos_of_pushing]);
-      }
+    std::cmatch result;
+    if (std::regex_match(strings.c_str(), result, regex)) {
+      std::cout << strings << ' ' << result[pos_of_pushing] << '\n';
+      where_push.insert(result[pos_of_pushing]);
+
     }
   }
 }
