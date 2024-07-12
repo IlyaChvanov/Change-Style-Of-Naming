@@ -11,22 +11,19 @@ void Project::FindAndPush(const std::regex& regex,
                           std::unordered_set<std::string>& where_push,
                           int pos_of_pushing) {
 
-  for (const auto& strings : texts_from_files_) {
-    std::cmatch result;
-    if (std::regex_match(strings.c_str(), result, regex)) {
-      std::cout << strings << ' ' << result[pos_of_pushing] << '\n';
-      where_push.insert(result[pos_of_pushing]);
-
+  for (const auto& text : texts_from_files_) {
+    for (std::sregex_iterator it = std::sregex_iterator(text.begin(), text.end(), regex);
+         it != std::sregex_iterator(); it++) {
+      std::smatch match = *it;
+      where_push.insert(match.str(pos_of_pushing));
     }
   }
 }
 
+
 void Project::FindAndPushClasses() {
-  std::regex class_regex("([\\s]*class )"
-                         "([\\w-]+[\\s]*)"
-                         "([{]*)"
-                         "([\\w]*)([};]*)");
-  FindAndPush(class_regex, objects_.classes_, 2);
+  std::regex class_regex("(\\b)(class)(\\s)(\\w+)");
+  FindAndPush(class_regex, objects_.classes_, 4);
 }
 //DOESN't WORK
 void Project::FindAndPushVariables() {

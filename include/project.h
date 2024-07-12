@@ -23,7 +23,7 @@ using Texts = std::vector<std::string>;
 class Project : public Change {
  public:
   Project(UserInput& input);
- private:
+ public:
   void FindAndPushVariables();
   void FindAndPushFunctions();
   void FindAndPushClasses();
