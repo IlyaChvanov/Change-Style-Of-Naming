@@ -1,5 +1,5 @@
 # plan:
-* Ask the path of file (may add directory later)
+* Ask the path of the file (may add directory later)
 * Ask what the user wants to change
 * Ask what style they want to get
 * Ask if they want to change existing files or make new
