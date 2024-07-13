@@ -32,6 +32,7 @@ void Project::FindAndPushVariables() {
 }
 //DOESN't WORK
 void Project::FindAndPushFunctions() {
-  std::regex function_regex("");
-  FindAndPush(function_regex, objects_.functions_, 2);
+  std::regex function_regex("(\\w+)(\\s+)(\\w+)"
+                            "(\\s*)(\\()(.*)(\\))[^;$]");
+  FindAndPush(function_regex, objects_.functions_, 3);
 }

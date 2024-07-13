@@ -10,3 +10,6 @@
 6	1895	7424252908862512	CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj	130175bbfc2bf76c
 74	4514	7424789833350029	CMakeFiles/change_style_of_naming.dir/src/helpingFunctions.cpp.obj	fefb936e62ccd931
 62	9213	7424789880160055	CMakeFiles/change_style_of_naming.dir/src/project.cpp.obj	2fd1f7f63c8dff9d
+27	4003	7425692236840865	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
+49	9137	7425692288220862	CMakeFiles/change_style_of_naming.dir/src/project.cpp.obj	2fd1f7f63c8dff9d
+9138	11262	7425692309470865	change_style_of_naming.exe	a8e02bf9b1238422
