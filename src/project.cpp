@@ -33,8 +33,9 @@ void Project::FindAndPushVariables() {
 }
 //DOESN't WORK
 void Project::FindAndPushFunctions() {
-  std::regex function_regex("([a-zA-Z0-9\:\*&\<\>\_\-]+)([\\s]*[a-zA-Z0-9\*&]*((::)|(\\s)))"
+  std::regex function_regex("([a-zA-Z0-9\:\*&\<\>\_\-]+[\\s])([\\s]*[a-zA-Z0-9\*&]*((::)|(\\s)))"
                             "([a-zA-Z0-9_-]+)"
-                            "([\(\)a-zA-Z0-9:,\\s\*&\<\>\_\-\]+[{])");
+                            "([\(]+)"
+                            "([\)a-zA-Z0-9:,\\s\*&\<\>\_\-\]+[{])");
   FindAndPush(function_regex, objects_.functions_, 6);
 }
