@@ -44,4 +44,7 @@ void HelpingFunctions::GetFiles(std::string& root,
     GetFiles(root, files);
   }
 }
+void HelpingFunctions::LogForFindings(std::sregex_iterator it, int pos_of_pushing) {
+  std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
+}
 
