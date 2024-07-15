@@ -9,5 +9,6 @@ int main() {
   auto pr = Project(input);
   pr.FindAndPushClasses();
   pr.FindAndPushFunctions();
+  pr.FindAndPushVariables();
   return 0;
 }

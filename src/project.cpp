@@ -28,7 +28,9 @@ void Project::FindAndPushClasses() {
 }
 //DOESN't WORK
 void Project::FindAndPushVariables() {
-  std::regex var_regex("");
+  std::regex var_regex("([a-zA-Z0-9\:\*&\<\>\_\-]+[\\s])"
+                       "([a-zA-Z0-9\*&\<\>\_\-])"
+                       "(.*;)");
   FindAndPush(var_regex, objects_.variables_, 2);
 }
 //DOESN't WORK

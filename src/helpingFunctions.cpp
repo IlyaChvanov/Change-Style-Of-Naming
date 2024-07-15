@@ -10,7 +10,7 @@ std::string HelpingFunctions::GetExtension(const std::string& file) {
   return file.substr(file.find_last_of('.') + 1);
 }
 
-//collects all, if necessary - create variants depending on programming language
+
 bool HelpingFunctions::IsProgrammingFile(const std::string& file) {
   std::string fe = GetExtension(file);
   return (fe == "c" || fe == "cpp" || fe == "h" || fe == "hpp");
