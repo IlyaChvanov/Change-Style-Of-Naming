@@ -13,9 +13,7 @@ std::string HelpingFunctions::GetExtension(const std::string& file) {
 //collects all, if necessary - create variants depending on programming language
 bool HelpingFunctions::IsProgrammingFile(const std::string& file) {
   std::string fe = GetExtension(file);
-  return (fe == "c" || fe == "cpp" || fe == "java" || fe == "py"
-  || fe == "js" || fe == "ts" || fe == "cs" || fe == "pl"
-  || fe == "dta" || fe == "sh" || fe == "h" || fe == "hpp");
+  return (fe == "c" || fe == "cpp" || fe == "h" || fe == "hpp");
 }
 
 Texts HelpingFunctions::MakeTextsFromFiles(
