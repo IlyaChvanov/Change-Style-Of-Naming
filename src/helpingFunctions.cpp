@@ -37,8 +37,8 @@ void HelpingFunctions::GetFiles(std::string& root,
         files.emplace_back(file.path().string());
       }
     }
-  } catch (std::filesystem::__cxx11::filesystem_error&) {
-    std::cout << "incorrect path of project enter it again" << '\n';
+  } catch (const std::filesystem::__cxx11::filesystem_error&) {
+    std::cout << "incorrect path of project, try again" << '\n';
     UI::AskDirectoryPath();
     root = UI::ReadPath();
     GetFiles(root, files);

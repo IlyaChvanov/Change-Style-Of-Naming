@@ -83,7 +83,7 @@ WorkWFile UI::ReadChangeOrCreateFile() {
       case 2:return change_current;
       default:throw UI::IncorrectInput();
     }
-  } catch (...) {
+  } catch (UI::IncorrectInput& exc) {
     cout << "incorrect input, try again" << '\n';
     return ReadChangeOrCreateFile();
   }

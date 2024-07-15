@@ -46,7 +46,13 @@ class UI {
 
   static UserInput Begin();
 
-  class IncorrectInput : public std::exception {};
+  //anyway I have to catch (...)  in UI.cpp because there are several of them and I can't catch them by this and set necessary message
+ class IncorrectInput : public std::exception {
+   private:
+    std::string message_ = "Incorrect input, try again";
+   public:
+    const char* what() const noexcept override { return message_.c_str(); }
+  };
 
  private:
   static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
