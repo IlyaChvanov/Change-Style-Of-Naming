@@ -32,6 +32,13 @@ void UI::AskChangeOrCreateFile() {
   cout << "2: change current" << '\n';
 }
 
+void UI::AskOriginalStyle() {
+  cout << "what is the original style" << '\n';
+  cout << "1: snake_case" << '\n';
+  cout << "2: camelCase" << '\n';
+  cout << "3: PascalCase" << '\n';
+}
+
 std::string UI::ReadPath() {
   std::string path;
   cin >> path;
@@ -96,6 +103,8 @@ void UI::AskIsCorrect(const UserInput& input) {
   PrintWhatToChange(input.what_to_change);
   cout << "Necessary style is: " ;
   PrintNecessaryStyle(input.necessary_style);
+  cout << "Original style is: ";
+  PrintOriginalStyle(input.original_style);
   cout << "You want to ";
   PrintReadOrMake(input.read_or_make);
   cout << '\n';
@@ -105,14 +114,18 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << "2: File for changing" << '\n';
   cout << "3: Objects for changing" << '\n';
   cout << "4: Necessary style" << '\n';
-  cout << "5: Choose make new file or change current" << '\n';
-  cout << "6: All" << '\n';
+  cout << "5: Original style" << '\n';
+  cout << "6: Choose make new file or change current" << '\n';
+  cout << "7: All" << '\n';
 }
 
 void UI::PrintWhatToChange(WhatToChange what_to_change) {
   cout << what_to_change_.at(what_to_change) << '\n';
 }
 void UI::PrintNecessaryStyle(Style style) {
+  cout << style_.at(style) << '\n';
+}
+void UI::PrintOriginalStyle(Style style) {
   cout << style_.at(style) << '\n';
 }
 void UI::PrintReadOrMake(WorkWFile read_or_make) {
@@ -142,11 +155,16 @@ void UI::ChangeCorrectness(UserInput& input) {
       break;
     }
     case 5: {
+      AskOriginalStyle();
+      input.original_style = ReadStyle();
+      break;
+    }
+    case 6: {
       AskChangeOrCreateFile();
       input.read_or_make = ReadChangeOrCreateFile();
       break;
     }
-    case 6: {
+    case 7: {
       Begin();
       break;
     }
@@ -166,11 +184,14 @@ UserInput UI::Begin() {
   UI::AskWhichStyleIsNeeded();
   auto necessary_style = UI::ReadStyle();
 
+  UI::AskOriginalStyle();
+  auto original_style = UI::ReadStyle();
+
   UI::AskChangeOrCreateFile();
   auto read_or_make = UI::ReadChangeOrCreateFile();
 
   auto input = UserInput(dir_path, file_path, what_to_change,
-            necessary_style,read_or_make);
+            necessary_style, original_style, read_or_make);
 
   UI::AskIsCorrect(input);
   UI::ChangeCorrectness(input);

@@ -27,6 +27,7 @@ struct UserInput {
   std::string file_path;
   WhatToChange what_to_change;
   Style necessary_style;
+  Style original_style;
   WorkWFile read_or_make;
 };
 
@@ -36,6 +37,7 @@ class UI {
   static void AskDirectoryPath();
   static void AskWhatToChange();
   static void AskWhichStyleIsNeeded();
+  static void AskOriginalStyle();
   static void AskChangeOrCreateFile();
   static void AskIsCorrect(const UserInput&);
 
@@ -76,6 +78,7 @@ class UI {
   static int AskAndGetNum();
   static void PrintWhatToChange(WhatToChange what_to_change);
   static void PrintNecessaryStyle(Style style);
+  static void PrintOriginalStyle(Style style);
   static void PrintReadOrMake(WorkWFile read_or_make);
   static void ChangeCorrectness(UserInput& input);
 };
