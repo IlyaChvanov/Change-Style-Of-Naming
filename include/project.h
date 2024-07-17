@@ -2,7 +2,6 @@
 #define CHANGE_STYLE_OF_NAMING_TEXT_H
 
 #include "UI.h"
-#include "change.h"
 
 #include "algorithm"
 #include "unordered_set"
@@ -20,7 +19,7 @@ struct ObjectsToChange {
 };
 
 using Texts = std::vector<std::string>;
-class Project : public Change {
+class Project {
  public:
   Project(UserInput& input);
  public:

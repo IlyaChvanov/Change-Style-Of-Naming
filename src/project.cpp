@@ -1,7 +1,7 @@
 #include "project.h"
 #include "helpingFunctions.h"
 
-Project::Project(UserInput& input) : Change(input.necessary_style) {
+Project::Project(UserInput& input) {
   std::vector<std::string> files;
   HelpingFunctions::GetFiles(input.dir_path, files);
   texts_from_files_ = HelpingFunctions::MakeTextsFromFiles(files);

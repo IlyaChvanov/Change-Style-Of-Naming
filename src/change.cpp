@@ -1,5 +1,20 @@
 #include "change.h"
-Change::Change(Style necessary_style, Style original_style) :
-  necessary_style_(necessary_style),
-  original_style_(original_style) {}
+
+Change::Change(Project& project) : project_(project) {
+
+}
+
+void Change::ChangeClasses() {
+
+}
+void Change::ChangeVariables() {
+
+}
+void Change::ChangeFunctions() {
+
+}
+std::string Change::SplitWords(std::string) const {
+
+}
+
 

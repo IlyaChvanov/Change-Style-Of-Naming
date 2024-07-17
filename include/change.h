@@ -3,15 +3,17 @@
 
 #include "UI.h"
 
+#include <project.h>
+
 class Change {
  public:
-  Change(Style necessary_style, Style original_style);
+  Change(Project& project);
+ private:
+  Project project_;
   void ChangeClasses();
   void ChangeVariables();
   void ChangeFunctions();
- private:
-  Style necessary_style_;
-  Style original_style_;
+  std::string SplitWords(std::string) const;
 };
 
 
