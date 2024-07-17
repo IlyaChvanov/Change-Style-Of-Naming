@@ -5,12 +5,13 @@
 
 class Change {
  public:
-  Change(Style necessary_style);
+  Change(Style necessary_style, Style original_style);
   void ChangeClasses();
   void ChangeVariables();
   void ChangeFunctions();
  private:
   Style necessary_style_;
+  Style original_style_;
 };
 
 
