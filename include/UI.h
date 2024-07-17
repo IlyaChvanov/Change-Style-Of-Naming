@@ -3,6 +3,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <iostream>
 
 enum WhatToChange {
   variable_names = 1,
@@ -57,6 +58,8 @@ class UI {
   };
 
  private:
+  static int AskAndGetNum();
+  static void ChangeCorrectness(UserInput& input);
   static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
       {variable_names, "variable names"},
       {function_names, "function names"},
@@ -75,12 +78,15 @@ class UI {
       {change_current, "change current file"}
   };
 
-  static int AskAndGetNum();
-  static void PrintWhatToChange(WhatToChange what_to_change);
-  static void PrintNecessaryStyle(Style style);
-  static void PrintOriginalStyle(Style style);
-  static void PrintReadOrMake(WorkWFile read_or_make);
-  static void ChangeCorrectness(UserInput& input);
+  static void PrintEnum(WhatToChange enum_to_print) {
+    std::cout << what_to_change_.at(enum_to_print);
+  }
+  static void PrintEnum(Style enum_to_print) {
+    std::cout << style_.at(enum_to_print);
+  }
+  static void PrintEnum(WorkWFile enum_to_print) {
+    std::cout << work_w_file_.at(enum_to_print);
+  }
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_UI_H

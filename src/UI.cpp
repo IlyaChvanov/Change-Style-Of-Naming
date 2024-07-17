@@ -1,4 +1,3 @@
-#include <iostream>
 #include "UI.h"
 
 using std::cout, std::cin;
@@ -100,15 +99,15 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << "Path to the root of the project: " << input.dir_path << '\n';
   cout << "File path: " << input.file_path << '\n';
   cout << "You want to change: ";
-  PrintWhatToChange(input.what_to_change);
-  cout << "Necessary style is: " ;
-  PrintNecessaryStyle(input.necessary_style);
-  cout << "Original style is: ";
-  PrintOriginalStyle(input.original_style);
-  cout << "You want to ";
-  PrintReadOrMake(input.read_or_make);
+  PrintEnum(input.what_to_change);
+  cout << '\n' << "Necessary style is: " ;
+  PrintEnum(input.necessary_style);
+  cout << '\n' << "Original style is: ";
+  PrintEnum(input.original_style);
+  cout << '\n' << "You want to ";
+  PrintEnum(input.read_or_make);
   cout << '\n';
-  cout << "Do you want to change something?" << '\n';
+  cout << '\n' << "Do you want to change something?" << '\n';
   cout << "0: No" << '\n';
   cout << "1: Path of root of the project" << '\n';
   cout << "2: File for changing" << '\n';
@@ -119,18 +118,6 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << "7: All" << '\n';
 }
 
-void UI::PrintWhatToChange(WhatToChange what_to_change) {
-  cout << what_to_change_.at(what_to_change) << '\n';
-}
-void UI::PrintNecessaryStyle(Style style) {
-  cout << style_.at(style) << '\n';
-}
-void UI::PrintOriginalStyle(Style style) {
-  cout << style_.at(style) << '\n';
-}
-void UI::PrintReadOrMake(WorkWFile read_or_make) {
-  cout << work_w_file_.at(read_or_make) << '\n';
-}
 void UI::ChangeCorrectness(UserInput& input) {
   switch (AskAndGetNum()) {
     case 0: break;
