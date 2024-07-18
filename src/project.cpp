@@ -15,7 +15,7 @@ void Project::FindAndPush(const std::regex& regex,
     for (std::sregex_iterator it = std::sregex_iterator(text.begin(), text.end(), regex);
          it != std::sregex_iterator(); it++) {
       std::smatch match = *it;
-      HelpingFunctions::LogForFindings(it, pos_of_pushing);
+      //HelpingFunctions::LogForFindings(it, pos_of_pushing);
       where_push.insert(match.str(pos_of_pushing));
     }
   }
