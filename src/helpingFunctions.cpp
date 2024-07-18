@@ -47,4 +47,39 @@ void HelpingFunctions::GetFiles(std::string& root,
 void HelpingFunctions::LogForFindings(std::sregex_iterator it, int pos_of_pushing) {
   std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }
+std::vector<std::string> HelpingFunctions::SplitWordsSnakeCase
+                        (std::string_view str) {
+  std::string word;
+  std::vector<std::string> words;
+  for (auto c : str) {
+    if (c != '_') {
+      word += c;
+    } else {
+      words.push_back(word);
+      word.clear();
+    }
+  }
+  if (!word.empty()) {
+    words.push_back(word);
+  }
+  return words;
+}
+std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
+                        (std::string_view str) {
+  std::string word;
+  std::vector<std::string> words;
+  for (auto it = str.begin(); it != str.end(); it++) {
+    if (*it != tolower(*it) && it != str.begin()) {
+      words.push_back(word);
+      word.clear();
+      word += tolower(*it);
+      continue;
+    }
+    word += tolower(*it);
+  }
+  if (!word.empty()) {
+    words.push_back(word);
+  }
+  return words;
+}
 
