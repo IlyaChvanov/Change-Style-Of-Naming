@@ -22,13 +22,18 @@ using Texts = std::vector<std::string>;
 class Project {
  public:
   Project(UserInput& input);
- public:
   void FindAndPushVariables();
   void FindAndPushFunctions();
   void FindAndPushClasses();
   void FindAndPush(const std::regex& regex,
                    std::unordered_set<std::string>& where_push,
                    int pos_of_pushing);
+  Style GetOriginalStyle() const;
+  Style GetNecessarySyle() const;
+  WhatToChange GetWhatToChange() const;
+  WorkWFile GetWorkWFile() const;
+ private:
+  const UserInput& input_;
   ObjectsToChange objects_;
   Texts texts_from_files_;
 };

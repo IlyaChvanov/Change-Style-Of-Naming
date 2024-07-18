@@ -1,7 +1,7 @@
 #include "project.h"
 #include "helpingFunctions.h"
 
-Project::Project(UserInput& input) {
+Project::Project(UserInput& input) : input_(input) {
   std::vector<std::string> files;
   HelpingFunctions::GetFiles(input.dir_path, files);
   texts_from_files_ = HelpingFunctions::MakeTextsFromFiles(files);
@@ -41,4 +41,16 @@ void Project::FindAndPushFunctions() {
                             "([\(]+)"
                             "([\)a-zA-Z0-9:,\\s\*&\<\>\_\-\]+[{])");
   FindAndPush(function_regex, objects_.functions_, 6);
+}
+Style Project::GetOriginalStyle() const {
+  return input_.original_style;
+}
+Style Project::GetNecessarySyle() const {
+  return input_.necessary_style;
+}
+WhatToChange Project::GetWhatToChange() const {
+  return input_.what_to_change;
+}
+WorkWFile Project::GetWorkWFile() const {
+  return input_.change_or_create;
 }
