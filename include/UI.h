@@ -29,7 +29,7 @@ struct UserInput {
   WhatToChange what_to_change;
   Style necessary_style;
   Style original_style;
-  WorkWFile read_or_make;
+  WorkWFile change_or_create;
 };
 
 class UI {
@@ -50,7 +50,7 @@ class UI {
   static UserInput Begin();
 
   //anyway I have to catch (...)  in UI.cpp because there are several of them and I can't catch them by this and set necessary message
- class IncorrectInput : public std::exception {
+  class IncorrectInput : public std::exception {
    private:
     std::string message_ = "Incorrect input, try again";
    public:
@@ -73,7 +73,7 @@ class UI {
       {PascalCase, "PascalCase"}
   };
 
-  static inline std::unordered_map<WorkWFile, std::string> work_w_file_ = {
+  static inline const std::unordered_map<WorkWFile, std::string> work_w_file_ = {
       {create_new, "create new file"},
       {change_current, "change current file"}
   };

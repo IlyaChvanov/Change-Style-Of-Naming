@@ -105,7 +105,7 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << '\n' << "Original style is: ";
   PrintEnum(input.original_style);
   cout << '\n' << "You want to ";
-  PrintEnum(input.read_or_make);
+  PrintEnum(input.change_or_create);
   cout << '\n';
   cout << '\n' << "Do you want to change something?" << '\n';
   cout << "0: No" << '\n';
@@ -148,7 +148,7 @@ void UI::ChangeCorrectness(UserInput& input) {
     }
     case 6: {
       AskChangeOrCreateFile();
-      input.read_or_make = ReadChangeOrCreateFile();
+      input.change_or_create = ReadChangeOrCreateFile();
       break;
     }
     case 7: {
