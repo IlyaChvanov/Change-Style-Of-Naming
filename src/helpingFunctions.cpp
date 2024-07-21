@@ -72,10 +72,10 @@ std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
     if (*it != tolower(*it) && it != str.begin()) {
       words.push_back(word);
       word.clear();
-      word += tolower(*it);
+      word += static_cast<char>(tolower(*it));
       continue;
     }
-    word += tolower(*it);
+    word += static_cast<char>(tolower(*it));
   }
   if (!word.empty()) {
     words.push_back(word);
