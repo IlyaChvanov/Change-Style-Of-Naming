@@ -19,6 +19,3 @@ std::vector<std::string> Change::SplitWords(std::string_view str) const {
   }
   return HelpingFunctions::SplitWordsPascalOrCamel(str);
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
-
-

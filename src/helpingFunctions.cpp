@@ -31,7 +31,7 @@ void HelpingFunctions::GetFiles(std::string& root,
   try {
     for (auto& file : std::filesystem::directory_iterator(root)) {
       if (std::filesystem::is_directory(file) && file.path().string() != "cmake-build-debug") {
-        std::string  fp =  file.path().string();
+        std::string  fp = file.path().string();
         GetFiles(fp, files);
       } else if (HelpingFunctions::IsProgrammingFile(file.path().string())) {
         files.emplace_back(file.path().string());
