@@ -6,10 +6,10 @@ std::string HelpingFunctions::GetTextFromFile(const std::string& file_path) {
     std::getline(file, to_return, '\0');
     return to_return;
 }
+
 std::string HelpingFunctions::GetExtension(const std::string& file) {
   return file.substr(file.find_last_of('.') + 1);
 }
-
 
 bool HelpingFunctions::IsProgrammingFile(const std::string& file) {
   std::string fe = GetExtension(file);
@@ -44,7 +44,7 @@ void HelpingFunctions::GetFiles(std::string& root,
     GetFiles(root, files);
   }
 }
-void HelpingFunctions::LogForFindings(std::sregex_iterator it, int pos_of_pushing) {
+void HelpingFunctions::LogForFindings(const std::sregex_iterator& it, int pos_of_pushing) {
   std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }
 std::vector<std::string> HelpingFunctions::SplitWordsSnakeCase
@@ -72,10 +72,10 @@ std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
     if (*it != tolower(*it) && it != str.begin()) {
       words.push_back(word);
       word.clear();
-      word += tolower(*it);
+      word += static_cast<char>(tolower(*it));
       continue;
     }
-    word += tolower(*it);
+    word += static_cast<char>(tolower(*it));
   }
   if (!word.empty()) {
     words.push_back(word);

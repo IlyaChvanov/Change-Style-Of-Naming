@@ -7,7 +7,7 @@
 
 class HelpingFunctions {
  public:
-  static void LogForFindings(std::sregex_iterator it, int pos_of_pushing);
+  static void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing);
   static std::string GetTextFromFile(const std::string& file_path);
   static std::string GetExtension(const std::string& file);
   static bool IsProgrammingFile(const std::string& file);
