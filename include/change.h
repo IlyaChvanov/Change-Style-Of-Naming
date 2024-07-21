@@ -17,5 +17,4 @@ class Change {
   std::vector<std::string> SplitWords(std::string_view) const;
 };
 
-
 #endif //CHANGE_STYLE_OF_NAMING_CHANGE_H

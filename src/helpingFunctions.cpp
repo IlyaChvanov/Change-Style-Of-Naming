@@ -80,6 +80,14 @@ std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
   if (!word.empty()) {
     words.push_back(word);
   }
+  LogForWordsSpliting(words, str);
   return words;
+}
+void HelpingFunctions::LogForWordsSpliting(const std::vector<std::string>& words,
+                                           const std::string_view str) {
+  std::cout << "Original word is: " << str;
+  for (const auto& word : words) {
+    std::cout << word << ' ';
+  }
 }
 
