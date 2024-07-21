@@ -45,7 +45,7 @@ void Project::FindAndPushFunctions() {
 Style Project::GetOriginalStyle() const {
   return input_.original_style;
 }
-Style Project::GetNecessarySyle() const {
+Style Project::GetNecessaryStyle() const {
   return input_.necessary_style;
 }
 WhatToChange Project::GetWhatToChange() const {

@@ -29,7 +29,7 @@ class Project {
                    std::unordered_set<std::string>& where_push,
                    int pos_of_pushing);
   Style GetOriginalStyle() const;
-  Style GetNecessarySyle() const;
+  Style GetNecessaryStyle() const;
   WhatToChange GetWhatToChange() const;
   WorkWFile GetWorkWFile() const;
  private:
