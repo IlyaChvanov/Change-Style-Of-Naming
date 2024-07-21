@@ -23,3 +23,7 @@ std::vector<std::string> Change::SplitWords(std::string_view str) const {
   }
   return HelpingFunctions::SplitWordsPascalOrCamel(str);
 }
+std::string Change::Rename(const std::vector<std::string>& old_name) const {
+  return HelpingFunctions::MakeNewName(old_name,
+                                       project_.GetNecessaryStyle());
+}
