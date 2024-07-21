@@ -54,3 +54,12 @@ WhatToChange Project::GetWhatToChange() const {
 WorkWFile Project::GetWorkWFile() const {
   return input_.change_or_create;
 }
+const std::unordered_set<std::string>& Project::GetObjectsToChange() const {
+  if (input_.what_to_change == variable_names) {
+    return objects_.variables_;
+  }
+  if (input_.what_to_change == function_names) {
+    return objects_.functions_;
+  }
+  return objects_.classes_;
+}
