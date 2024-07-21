@@ -1,7 +1,12 @@
 #include "change.h"
 #include "helpingFunctions.h"
 
-Change::Change(Project& project) : project_(project) {}
+Change::Change(Project& project) : project_(project) {
+  for (auto& old_name : project_.GetObjectsToChange()) {
+    std::string new_name = Rename(old_name);
+    old_new_names[old_name] = new_name;
+  }
+}
 
 void Change::ChangeClasses() {
 

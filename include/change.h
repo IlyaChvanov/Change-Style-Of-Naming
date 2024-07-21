@@ -15,6 +15,8 @@ class Change {
   void ChangeVariables();
   void ChangeFunctions();
   std::vector<std::string> SplitWords(std::string_view) const;
+  std::string Rename(std::string_view);
+  std::unordered_map<std::string_view, std::string_view> old_new_names;
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_CHANGE_H
