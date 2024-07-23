@@ -23,6 +23,7 @@ Texts HelpingFunctions::MakeTextsFromFiles(
   for (auto& file : files) {
     texts.emplace_back(GetTextFromFile(file));
   }
+  texts.shrink_to_fit();
   return texts;
 }
 
@@ -81,6 +82,7 @@ std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
     words.push_back(word);
   }
   LogForWordsSpliting(words, str);
+  words.shrink_to_fit();
   return words;
 }
 void HelpingFunctions::LogForWordsSpliting(const std::vector<std::string>& words,
