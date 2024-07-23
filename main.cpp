@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "project.h"
+#include "change.h"
 
 using std::cin;
 int main() {
@@ -9,6 +9,6 @@ int main() {
   auto pr = Project(input);
   pr.FindAndPushClasses();
   pr.FindAndPushFunctions();
-  //pr.FindAndPushVariables();
+  auto change = Change(pr);
   return 0;
 }

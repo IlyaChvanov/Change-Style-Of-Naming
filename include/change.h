@@ -8,7 +8,7 @@
 
 class Change {
  public:
-  Change(Project& project);
+  explicit Change(Project& project);
  private:
   Project& project_;
   void ChangeClasses();
@@ -16,7 +16,7 @@ class Change {
   void ChangeFunctions();
   std::vector<std::string> SplitWords(std::string_view) const;
   std::string Rename(const std::vector<std::string>& old_name) const;
-  std::unordered_map<std::string_view, std::string_view> old_new_names;
+  std::unordered_map<std::string_view, std::string> old_new_names;
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_CHANGE_H
