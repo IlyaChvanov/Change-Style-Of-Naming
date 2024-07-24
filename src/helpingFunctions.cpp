@@ -101,40 +101,55 @@ std::string HelpingFunctions::MakeNewName(const std::vector<std::string>& splite
   to_return.reserve(size_of_words);
 
   if (style == snake_case) {
-    for (const auto& word : splited) {
-      for (auto c : word) {
-        to_return += c;
-      }
-      to_return+= '_';
-    }
-    to_return.erase(to_return.end() - 1);
+    to_return = MakeSnakeCase(splited);
   } else if (style == camelCase) {
-    bool is_first_word = true;
-    for (const auto& word : splited) {
-      bool is_first_letter = true;
-      for (auto c : word) {
-        if (is_first_letter && !is_first_word) {
-          to_return += static_cast<char>(toupper(c));
-          is_first_letter = false;
-        } else {
-          to_return += c;
-        }
-      }
-      is_first_word = false;
-    }
+    to_return = MakeCamelCase(splited);
   } else if (style == PascalCase) {
-    for (const auto& word : splited) {
-      bool is_first_letter = true;
-      for (auto c : word) {
-        if (is_first_letter) {
-          to_return += static_cast<char>(toupper(c));
-          is_first_letter = false;
-        } else {
-          to_return += c;
-        }
-      }
-    }
+    to_return = MakePascalCase(splited);
   }
   return to_return;
+}
+std::string HelpingFunctions::MakeSnakeCase(const std::vector<std::string>& splited) {
+    std::string result;
+    for (const auto& word : splited) {
+        for (auto c : word) {
+            result += c;
+        }
+        result += '_';
+    }
+    result.erase(result.end() - 1);
+    return result;
+}
+std::string HelpingFunctions::MakeCamelCase(const std::vector<std::string>& splited) {
+    std::string result;
+    bool is_first_word = true;
+    for (const auto& word : splited) {
+        bool is_first_letter = true;
+        for (auto c : word) {
+            if (is_first_letter && !is_first_word) {
+                result += static_cast<char>(toupper(c));
+                is_first_letter = false;
+            } else {
+                result += c;
+            }
+        }
+        is_first_word = false;
+    }
+    return result;
+}
+std::string HelpingFunctions::MakePascalCase(const std::vector<std::string>& splited) {
+    std::string result;
+    for (const auto& word : splited) {
+        bool is_first_letter = true;
+        for (auto c : word) {
+            if (is_first_letter) {
+                result += static_cast<char>(toupper(c));
+                is_first_letter = false;
+            } else {
+                result += c;
+            }
+        }
+    }
+    return result;
 }
 
