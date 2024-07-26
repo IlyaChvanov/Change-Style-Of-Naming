@@ -1,17 +1,17 @@
 #include "helpingFunctions.h"
 
-std::string HelpingFunctions::GetTextFromFile(const std::string& file_path) {
+std::string HelpingFunctions::GetTextFromFile(std::string_view file_path) {
     std::ifstream file(file_path);
     std::string to_return;
     std::getline(file, to_return, '\0');
     return to_return;
 }
 
-std::string HelpingFunctions::GetExtension(const std::string& file) {
+std::string HelpingFunctions::GetExtension(std::string_view file) {
   return file.substr(file.find_last_of('.') + 1);
 }
 
-bool HelpingFunctions::IsProgrammingFile(const std::string& file) {
+bool HelpingFunctions::IsProgrammingFile(std::string_view file) {
   std::string fe = GetExtension(file);
   return (fe == "c" || fe == "cpp" || fe == "h" || fe == "hpp");
 }
@@ -86,7 +86,7 @@ std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
   return words;
 }
 void HelpingFunctions::LogForWordsSpliting(const std::vector<std::string>& words,
-                                           const std::string_view str) {
+                                           std::string_view str) {
   std::cout << "Original word is: " << str;
   for (const auto& word : words) {
     std::cout << word << ' ';

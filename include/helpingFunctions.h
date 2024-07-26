@@ -9,10 +9,10 @@ class HelpingFunctions {
  public:
   static void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing);
   static void LogForWordsSpliting(const std::vector<std::string>& words,
-                                  const std::string_view str);
-  static std::string GetTextFromFile(const std::string& file_path);
-  static std::string GetExtension(const std::string& file);
-  static bool IsProgrammingFile(const std::string& file);
+                                  std::string_view str);
+  static std::string GetTextFromFile(std::string_view file_path);
+  static std::string GetExtension(std::string_view file);
+  static bool IsProgrammingFile(std::string_view file);
   static Texts MakeTextsFromFiles(const std::vector<std::string>& files);
   static void GetFiles(std::string& root,
                        std::vector<std::string>& files);
