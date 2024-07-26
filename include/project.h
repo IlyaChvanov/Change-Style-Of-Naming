@@ -32,6 +32,7 @@ class Project {
   Style GetNecessaryStyle() const;
   WhatToChange GetWhatToChange() const;
   WorkWFile GetWorkWFile() const;
+  Texts& GetTexts();
   const std::unordered_set<std::string>& GetObjectsToChange() const;
  private:
   const UserInput& input_;

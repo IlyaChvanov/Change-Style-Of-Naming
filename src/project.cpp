@@ -62,3 +62,6 @@ const std::unordered_set<std::string>& Project::GetObjectsToChange() const {
   }
   return objects_.classes_;
 }
+Texts& Project::GetTexts()  {
+  return texts_from_files_;
+}

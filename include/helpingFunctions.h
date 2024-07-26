@@ -18,7 +18,8 @@ class HelpingFunctions {
                        std::vector<std::string>& files);
   static std::vector<std::string> SplitWordsSnakeCase(std::string_view str);
   static std::vector<std::string> SplitWordsPascalOrCamel(std::string_view str);
-  static std::string MakeNewName(const std::vector<std::string>& splited, Style style);
+  static std::string MakeNewName(const std::vector<std::string>& splited,
+                                 Style necessary_style);
   static std::string MakeSnakeCase(const std::vector<std::string>&);
   static  std::string MakeCamelCase(const std::vector<std::string>&);
   static  std::string MakePascalCase(const std::vector<std::string>&);

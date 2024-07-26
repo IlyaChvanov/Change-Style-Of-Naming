@@ -11,11 +11,8 @@ class Change {
   explicit Change(Project& project);
  private:
   Project& project_;
-  void ChangeClasses();
-  void ChangeVariables();
-  void ChangeFunctions();
   std::vector<std::string> SplitWords(std::string_view) const;
-  std::string Rename(const std::vector<std::string>& old_name) const;
+  void ChangeProject();
   std::unordered_map<std::string_view, std::string> old_new_names;
 };
 
