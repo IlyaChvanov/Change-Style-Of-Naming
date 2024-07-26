@@ -16,8 +16,8 @@ class HelpingFunctions {
   static Texts MakeTextsFromFiles(const std::vector<std::string>& files);
   static void GetFiles(std::string& root,
                        std::vector<std::string>& files);
-  static std::vector<std::string> SplitWordsSnakeCase(std::string_view);
-  static std::vector<std::string> SplitWordsPascalOrCamel(std::string_view);
+  static std::vector<std::string> SplitWordsSnakeCase(std::string_view str);
+  static std::vector<std::string> SplitWordsPascalOrCamel(std::string_view str);
   static std::string MakeNewName(const std::vector<std::string>& splited, Style style);
 };
 #endif //CHANGE_STYLE_OF_NAMING_INCLUDE_HELPINGFUNCTIONS_H_

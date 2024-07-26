@@ -100,7 +100,7 @@ void UI::AskIsCorrect(const UserInput& input) {
   cout << "File path: " << input.file_path << '\n';
   cout << "You want to change: ";
   PrintEnum(input.what_to_change);
-  cout << '\n' << "Necessary style is: " ;
+  cout << '\n' << "Necessary style is: ";
   PrintEnum(input.necessary_style);
   cout << '\n' << "Original style is: ";
   PrintEnum(input.original_style);
@@ -178,7 +178,7 @@ UserInput UI::Begin() {
   auto read_or_make = UI::ReadChangeOrCreateFile();
 
   auto input = UserInput(dir_path, file_path, what_to_change,
-            necessary_style, original_style, read_or_make);
+                         necessary_style, original_style, read_or_make);
 
   UI::AskIsCorrect(input);
   UI::ChangeCorrectness(input);

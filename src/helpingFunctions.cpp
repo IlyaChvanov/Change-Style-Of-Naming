@@ -1,10 +1,10 @@
 #include "helpingFunctions.h"
 
 std::string HelpingFunctions::GetTextFromFile(const std::string& file_path) {
-    std::ifstream file(file_path);
-    std::string to_return;
-    std::getline(file, to_return, '\0');
-    return to_return;
+  std::ifstream file(file_path);
+  std::string to_return;
+  std::getline(file, to_return, '\0');
+  return to_return;
 }
 
 std::string HelpingFunctions::GetExtension(const std::string& file) {
@@ -28,11 +28,11 @@ Texts HelpingFunctions::MakeTextsFromFiles(
 }
 
 void HelpingFunctions::GetFiles(std::string& root,
-                                  std::vector<std::string>& files) {
+                                std::vector<std::string>& files) {
   try {
     for (auto& file : std::filesystem::directory_iterator(root)) {
       if (std::filesystem::is_directory(file) && file.path().string() != "cmake-build-debug") {
-        std::string  fp = file.path().string();
+        std::string fp = file.path().string();
         GetFiles(fp, files);
       } else if (HelpingFunctions::IsProgrammingFile(file.path().string())) {
         files.emplace_back(file.path().string());
@@ -49,7 +49,7 @@ void HelpingFunctions::LogForFindings(const std::sregex_iterator& it, int pos_of
   std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }
 std::vector<std::string> HelpingFunctions::SplitWordsSnakeCase
-                        (std::string_view str) {
+    (std::string_view str) {
   std::string word;
   std::vector<std::string> words;
   for (auto c : str) {
@@ -66,7 +66,7 @@ std::vector<std::string> HelpingFunctions::SplitWordsSnakeCase
   return words;
 }
 std::vector<std::string> HelpingFunctions::SplitWordsPascalOrCamel
-                        (std::string_view str) {
+    (std::string_view str) {
   std::string word;
   std::vector<std::string> words;
   for (auto it = str.begin(); it != str.end(); it++) {
@@ -105,7 +105,7 @@ std::string HelpingFunctions::MakeNewName(const std::vector<std::string>& splite
       for (auto c : word) {
         to_return += c;
       }
-      to_return+= '_';
+      to_return += '_';
     }
     to_return.erase(to_return.end() - 1);
   } else if (style == camelCase) {
@@ -137,4 +137,5 @@ std::string HelpingFunctions::MakeNewName(const std::vector<std::string>& splite
   }
   return to_return;
 }
+
 

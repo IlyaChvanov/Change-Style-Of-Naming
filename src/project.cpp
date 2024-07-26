@@ -21,7 +21,6 @@ void Project::FindAndPush(const std::regex& regex,
   }
 }
 
-
 void Project::FindAndPushClasses() {
   std::regex class_regex("(\\b)(class)(\\s)(\\w+)"
                          "([\\s\:\\w_\-]*)([\{])");

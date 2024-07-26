@@ -39,5 +39,4 @@ class Project {
   Texts texts_from_files_;
 };
 
-
 #endif //CHANGE_STYLE_OF_NAMING_TEXT_H
