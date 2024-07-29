@@ -1,18 +1,18 @@
 #include "helpingFunctions.h"
 
 std::string HelpingFunctions::GetTextFromFile(std::string_view file_path) {
-    std::ifstream file(file_path);
+    std::ifstream file(file_path.begin());
     std::string to_return;
     std::getline(file, to_return, '\0');
     return to_return;
 }
 
-std::string HelpingFunctions::GetExtension(std::string_view file) {
+std::string_view HelpingFunctions::GetExtension(std::string_view file) {
   return file.substr(file.find_last_of('.') + 1);
 }
 
 bool HelpingFunctions::IsProgrammingFile(std::string_view file) {
-  std::string fe = GetExtension(file);
+  std::string_view fe = GetExtension(file);
   return (fe == "c" || fe == "cpp" || fe == "h" || fe == "hpp");
 }
 
