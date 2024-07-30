@@ -11,8 +11,4 @@ int main() {
   pr.FindAndPushFunctions();
   auto change = Change(pr);
   return 0;
-  int x = tolower()
-}
-while (i > 0) {
-
 }

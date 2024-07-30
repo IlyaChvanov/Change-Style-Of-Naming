@@ -14,6 +14,8 @@ class Change {
   std::vector<std::string> SplitWords(std::string_view) const;
   void ChangeProject();
   std::unordered_map<std::string_view, std::string> old_new_names;
+  void FillStringWVector(std::string& old_str,
+                         const std::vector<std::string>& new_str);
 };
 
 #endif //CHANGE_STYLE_OF_NAMING_CHANGE_H

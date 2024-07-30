@@ -19,8 +19,34 @@ std::vector<std::string> Change::SplitWords(std::string_view str) const {
 }
 void Change::ChangeProject() {
   for (auto& text : project_.GetTexts()) {
-    // разбить строку на слова и проверять каждое словно на вхождение в old_new_names
+    std::vector<std::string> buf;
+    auto l = text.begin();
+    for (auto r = text.begin(); r != text.end(); r++) {
+      if (*r == 45 || *r >= 65 && *r <= 90 || *r >= 97 && *r <= 122 || *r == 95) {
+        continue;
+      }
+      buf.emplace_back(l,r);
+      l = r;
+      buf.emplace_back(std::string{*l});
+      l++;
+    }
+    if (l != text.end()) {
+      buf.emplace_back(l, text.end());
+    }
+    FillStringWVector(text, buf);
   }
-
+}
+void Change::FillStringWVector(std::string& old_str,
+                               const std::vector<std::string>& new_str) {
+  size_t prev_size = old_str.size();
+  old_str.clear();
+  old_str.reserve(prev_size);
+  for (const auto& str : new_str) {
+    if (old_new_names.contains(str)) {
+      old_str += old_new_names[str];
+    } else {
+      old_str += str;
+    }
+  }
 }
 

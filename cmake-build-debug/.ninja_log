@@ -22,3 +22,14 @@
 96	8027	7434384630628161	CMakeFiles/change_style_of_naming.dir/src/helpingFunctions.cpp.obj	fefb936e62ccd931
 24	14010	7434384690338722	CMakeFiles/change_style_of_naming.dir/src/project.cpp.obj	2fd1f7f63c8dff9d
 14013	14832	7434384698528217	change_style_of_naming.exe	a8e02bf9b1238422
+51	3192	7439712726894184	CMakeFiles/change_style_of_naming.dir/src/UI.cpp.obj	ea4a37f2f68db4fd
+23	4209	7439712737114186	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
+3193	7666	7439712771794175	CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj	130175bbfc2bf76c
+47	10105	7439712796024182	CMakeFiles/change_style_of_naming.dir/src/project.cpp.obj	2fd1f7f63c8dff9d
+16	4197	7439716048414184	CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj	130175bbfc2bf76c
+11	4825	7439716054574241	CMakeFiles/change_style_of_naming.dir/src/helpingFunctions.cpp.obj	fefb936e62ccd931
+6	9079	7439716097174175	CMakeFiles/change_style_of_naming.dir/src/project.cpp.obj	2fd1f7f63c8dff9d
+9080	11542	7439716121784235	change_style_of_naming.exe	a8e02bf9b1238422
+17	6691	7440357070183253	CMakeFiles/change_style_of_naming.dir/main.cpp.obj	30a577af0440a00a
+101	6848	7440357071943246	CMakeFiles/change_style_of_naming.dir/src/change.cpp.obj	130175bbfc2bf76c
+6849	10071	7440357103983246	change_style_of_naming.exe	a8e02bf9b1238422
