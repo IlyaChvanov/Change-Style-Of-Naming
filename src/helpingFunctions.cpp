@@ -21,9 +21,8 @@ Texts HelpingFunctions::MakeTextsFromFiles(
   Texts texts;
   texts.reserve(files.size());
   for (auto& file : files) {
-    texts.emplace_back(GetTextFromFile(file));
+    texts[file] = GetTextFromFile(file);
   }
-  texts.shrink_to_fit();
   return texts;
 }
 

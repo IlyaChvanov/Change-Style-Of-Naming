@@ -18,7 +18,7 @@ std::vector<std::string> Change::SplitWords(std::string_view str) const {
   return HelpingFunctions::SplitWordsPascalOrCamel(str);
 }
 void Change::ChangeProject() {
-  for (auto& text : project_.GetTexts()) {
+  for (auto& [file_path, text] : project_.GetTexts()) {
     std::vector<std::string> buf;
     auto l = text.begin();
     for (auto r = text.begin(); r != text.end(); r++) {

@@ -18,7 +18,8 @@ struct ObjectsToChange {
   std::unordered_set<std::string> classes_;
 };
 
-using Texts = std::vector<std::string>;
+// file_path -> text;
+using Texts = std::unordered_map<std::string, std::string>;
 class Project {
  public:
   Project(UserInput& input);

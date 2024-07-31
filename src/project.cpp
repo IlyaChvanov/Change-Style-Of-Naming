@@ -11,7 +11,7 @@ void Project::FindAndPush(const std::regex& regex,
                           std::unordered_set<std::string>& where_push,
                           int pos_of_pushing) {
 
-  for (const auto& text : texts_from_files_) {
+  for (const auto& [file_path, text] : texts_from_files_) {
     for (std::sregex_iterator it = std::sregex_iterator(text.begin(), text.end(), regex);
          it != std::sregex_iterator(); it++) {
       std::smatch match = *it;
