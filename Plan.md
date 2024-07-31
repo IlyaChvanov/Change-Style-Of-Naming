@@ -9,9 +9,9 @@
   - [x] classes
   - [x] functions
   - [ ] variables
-- [ ] Change
-  - [ ] split to words
-  - [ ] connect with necessary style 
+- [x] Change
+  - [x] split to words
+  - [x] connect with necessary style 
 - [ ] Save
   - [ ] make new file
   - [ ] change current file 
