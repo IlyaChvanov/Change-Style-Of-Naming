@@ -16,4 +16,4 @@
   - [ ] make new file
   - [ ] change current file 
 - [] Debug
-  - [] caricatures mustn't parse as pascal_case; 
+  - [] abbreviations mustn't parse as pascal_case; 
