@@ -16,4 +16,5 @@
   - [ ] make new file
   - [ ] change current file 
 - [] Debug
-  - [] abbreviations mustn't parse as pascal_case; 
+  - [] abbreviations mustn't parse as pascal_case;
+  - [] don't change things with other original style
