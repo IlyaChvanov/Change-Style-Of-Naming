@@ -1,7 +1,7 @@
 # Change style of naming
 ### This programm is going to change style of naming variables, functions and classes(for example PascalCase -> snake_case, snake_case -> camelCalse etc.)
 ### Code style https://google.github.io/styleguide/cppguide.html
-### At the moment parsing of variables and functions are not implemented
+### At the moment parsing of variables are not definited
 
 ### How to work:
  Open .exe file, which provides command string interface
