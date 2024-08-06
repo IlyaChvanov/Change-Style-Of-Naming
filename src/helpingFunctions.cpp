@@ -8,25 +8,15 @@ std::string GetTextFromFile(const std::filesystem::path& file_path) {
   std::getline(file, to_return, '\0');
   return to_return;
 }
-bool IsProgrammingFile(const std::filesystem::path& path) {
-  auto fe = path.extension();
+bool IsProgrammingFile(const std::string& path) {
+  auto fe = path.substr(path.find_last_of('.') + 1);
   return (fe == "c" || fe == "cpp" || fe == "h" || fe == "hpp");
 }
 
-Texts MakeTextsFromFiles(const std::vector<std::string>& files) {
-  Texts texts;
-  texts.reserve(files.size());
-  for (auto& file : files) {
-    texts[file] = GetTextFromFile(file);
-  }
-  return texts;
-}
-
-void GetFiles(std::string& root,
-              std::vector<std::string>& files) {
+void GetFiles(std::string& root, std::vector<std::filesystem::path>& files) {
   try {
     for (auto& file : std::filesystem::directory_iterator(root)) {
-      if (std::filesystem::is_directory(file) && file.path().string() != "cmake-build-debug") {
+      if (std::filesystem::is_directory(file) && !file.path().string().ends_with("cmake-build-debug") && !file.path().string().ends_with(".idea")) {
         std::string fp = file.path().string();
         GetFiles(fp, files);
       } else if (IsProgrammingFile(file.path().string())) {
@@ -40,6 +30,16 @@ void GetFiles(std::string& root,
     GetFiles(root, files);
   }
 }
+
+Texts MakeTextsFromFiles(const std::vector<std::filesystem::path>& files) {
+  Texts texts;
+  texts.reserve(files.size());
+  for (auto& file : files) {
+    texts[file] = GetTextFromFile(file);
+  }
+  return texts;
+}
+
 void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing) {
   std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }

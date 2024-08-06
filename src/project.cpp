@@ -2,7 +2,7 @@
 #include "helpingFunctions.h"
 
 Project::Project(UserInput& input) : input_(input) {
-  std::vector<std::string> files;
+  std::vector<std::filesystem::path> files;
   HF::GetFiles(input.dir_path, files);
   texts_from_files_ = HF::MakeTextsFromFiles(files);
 }
@@ -14,7 +14,7 @@ void Project::FindAndPush(const std::regex& regex,
   for (const auto& [file_path, text] : texts_from_files_) {
     for (std::sregex_iterator it = std::sregex_iterator(text.begin(), text.end(), regex);
          it != std::sregex_iterator(); it++) {
-      std::smatch match = *it;
+      const std::smatch& match = *it;
       //HF::LogForFindings(it, pos_of_pushing);
       where_push.insert(match.str(pos_of_pushing));
     }

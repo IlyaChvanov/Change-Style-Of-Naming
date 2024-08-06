@@ -2,9 +2,9 @@
 #define CHANGE_STYLE_OF_NAMING_TEXT_H
 
 #include "UI.h"
-
-#include "algorithm"
-#include "unordered_set"
+#include <iterator>
+#include <algorithm>
+#include <unordered_set>
 #include <filesystem>
 #include <fstream>
 #include <vector>
@@ -19,7 +19,7 @@ struct ObjectsToChange {
 };
 
 // file_path -> text;
-using Texts = std::unordered_map<std::string, std::string>;
+using Texts = std::unordered_map<std::filesystem::path, std::string>;
 class Project {
  public:
   Project(UserInput& input);
