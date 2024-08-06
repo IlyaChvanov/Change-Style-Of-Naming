@@ -5,7 +5,7 @@
 
 class Save {
  public:
-  Save(const Project& project);
+  explicit Save(const Project& project);
  private:
   const Project& project_;
   void MakeFile();

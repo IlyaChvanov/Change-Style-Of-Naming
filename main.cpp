@@ -2,7 +2,6 @@
 
 #include "change.h"
 
-
 using std::cin;
 int main() {
 

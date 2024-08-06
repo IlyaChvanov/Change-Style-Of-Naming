@@ -41,6 +41,7 @@ void Project::FindAndPushFunctions() {
                             "([\)a-zA-Z0-9:,\\s\*&\<\>\_\-\]+[{])");
   FindAndPush(function_regex, objects_.functions_, 6);
 }
+
 Style Project::GetOriginalStyle() const {
   return input_.original_style;
 }
@@ -53,6 +54,10 @@ WhatToChange Project::GetWhatToChange() const {
 WorkWFile Project::GetWorkWFile() const {
   return input_.change_or_create;
 }
+Texts& Project::GetTexts()  {
+  return texts_from_files_;
+}
+
 const std::unordered_set<std::string>& Project::GetObjectsToChange() const {
   if (input_.what_to_change == variable_names) {
     return objects_.variables_;
@@ -62,6 +67,4 @@ const std::unordered_set<std::string>& Project::GetObjectsToChange() const {
   }
   return objects_.classes_;
 }
-Texts& Project::GetTexts()  {
-  return texts_from_files_;
-}
+

@@ -29,12 +29,14 @@ class Project {
   void FindAndPush(const std::regex& regex,
                    std::unordered_set<std::string>& where_push,
                    int pos_of_pushing);
+
   Style GetOriginalStyle() const;
   Style GetNecessaryStyle() const;
   WhatToChange GetWhatToChange() const;
   WorkWFile GetWorkWFile() const;
   Texts& GetTexts();
   const std::unordered_set<std::string>& GetObjectsToChange() const;
+
  private:
   const UserInput& input_;
   ObjectsToChange objects_;

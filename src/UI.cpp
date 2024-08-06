@@ -82,6 +82,7 @@ Style UI::ReadStyle() {
     return ReadStyle();
   }
 }
+
 WorkWFile UI::ReadChangeOrCreateFile() {
   try {
     switch (UI::AskAndGetNum()) {
@@ -94,6 +95,7 @@ WorkWFile UI::ReadChangeOrCreateFile() {
     return ReadChangeOrCreateFile();
   }
 }
+
 void UI::AskIsCorrect(const UserInput& input) {
   cout << "\n";
   cout << "Path to the root of the project: " << input.dir_path << '\n';

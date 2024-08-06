@@ -60,6 +60,7 @@ class UI {
  private:
   static int AskAndGetNum();
   static void ChangeCorrectness(UserInput& input);
+
   static inline const std::unordered_map<WhatToChange, std::string> what_to_change_ = {
       {variable_names, "variable names"},
       {function_names, "function names"},

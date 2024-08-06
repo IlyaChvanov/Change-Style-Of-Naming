@@ -16,7 +16,8 @@ bool IsProgrammingFile(const std::string& path) {
 void GetFiles(std::string& root, std::vector<std::filesystem::path>& files) {
   try {
     for (auto& file : std::filesystem::directory_iterator(root)) {
-      if (std::filesystem::is_directory(file) && !file.path().string().ends_with("cmake-build-debug") && !file.path().string().ends_with(".idea")) {
+      if (std::filesystem::is_directory(file) && !file.path().string().ends_with("cmake-build-debug")
+          && !file.path().string().ends_with(".idea")) {
         std::string fp = file.path().string();
         GetFiles(fp, files);
       } else if (IsProgrammingFile(file.path().string())) {
@@ -43,6 +44,7 @@ Texts MakeTextsFromFiles(const std::vector<std::filesystem::path>& files) {
 void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing) {
   std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }
+
 std::vector<std::string> SplitWordsSnakeCase(std::string_view str) {
   std::string word;
   std::vector<std::string> words;
@@ -59,6 +61,7 @@ std::vector<std::string> SplitWordsSnakeCase(std::string_view str) {
   }
   return words;
 }
+
 void LogForWordsSpliting(const std::vector<std::string>& words,
                          std::string_view str) {
   std::cout << "Original word is: " << str;
@@ -66,6 +69,7 @@ void LogForWordsSpliting(const std::vector<std::string>& words,
     std::cout << word << ' ';
   }
 }
+
 std::vector<std::string> SplitWordsPascalOrCamel(std::string_view str) {
   std::string word;
   std::vector<std::string> words;
@@ -115,6 +119,7 @@ std::string MakeCamelCase(const std::vector<std::string>& splited) {
   }
   return result;
 }
+
 std::string MakePascalCase(const std::vector<std::string>& splited) {
   std::string result;
   for (const auto& word : splited) {
@@ -148,5 +153,4 @@ std::string MakeNewName(const std::vector<std::string>& splited, Style style) {
   }
   return to_return;
 }
-
 }

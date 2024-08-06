@@ -3,8 +3,7 @@
 
 Change::Change(Project& project) : project_(project) {
   for (auto& old_name : project_.GetObjectsToChange()) {
-    std::string new_name = HF::MakeNewName(
-        SplitWords(old_name),
+    std::string new_name = HF::MakeNewName(SplitWords(old_name),
         project_.GetNecessaryStyle());
     old_new_names[old_name] = new_name;
   }
@@ -17,6 +16,7 @@ std::vector<std::string> Change::SplitWords(std::string_view str) const {
   }
   return HF::SplitWordsPascalOrCamel(str);
 }
+
 void Change::ChangeProject() {
   for (auto& [file_path, text] : project_.GetTexts()) {
     std::vector<std::string> buf;
@@ -36,6 +36,7 @@ void Change::ChangeProject() {
     FillStringWVector(text, buf);
   }
 }
+
 void Change::FillStringWVector(std::string& old_str,
                                const std::vector<std::string>& new_str) {
   size_t prev_size = old_str.size();
