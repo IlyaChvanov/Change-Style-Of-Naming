@@ -22,7 +22,7 @@ void Change::ChangeProject() {
     std::vector<std::string> buf;
     auto l = text.begin();
     for (auto r = text.begin(); r != text.end(); r++) {
-      if (*r == 45 || *r >= 65 && *r <= 90 || *r >= 97 && *r <= 122 || *r == 95) {
+      if (*r == '-' || *r >= 'A' && *r <= 'Z' || *r >= 'a' && *r <= 'z' || *r == '_') {
         continue;
       }
       buf.emplace_back(l,r);
