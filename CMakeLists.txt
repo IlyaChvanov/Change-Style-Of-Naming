@@ -17,3 +17,4 @@ add_executable(change_style_of_naming main.cpp
         src/helpingFunctions.cpp
         src/helpingFunctions.cpp
 )
+

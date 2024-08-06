@@ -3,8 +3,8 @@
 
 Project::Project(UserInput& input) : input_(input) {
   std::vector<std::string> files;
-  HelpingFunctions::GetFiles(input.dir_path, files);
-  texts_from_files_ = HelpingFunctions::MakeTextsFromFiles(files);
+  HF::GetFiles(input.dir_path, files);
+  texts_from_files_ = HF::MakeTextsFromFiles(files);
 }
 
 void Project::FindAndPush(const std::regex& regex,
@@ -15,7 +15,7 @@ void Project::FindAndPush(const std::regex& regex,
     for (std::sregex_iterator it = std::sregex_iterator(text.begin(), text.end(), regex);
          it != std::sregex_iterator(); it++) {
       std::smatch match = *it;
-      //HelpingFunctions::LogForFindings(it, pos_of_pushing);
+      //HF::LogForFindings(it, pos_of_pushing);
       where_push.insert(match.str(pos_of_pushing));
     }
   }

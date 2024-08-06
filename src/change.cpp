@@ -3,7 +3,7 @@
 
 Change::Change(Project& project) : project_(project) {
   for (auto& old_name : project_.GetObjectsToChange()) {
-    std::string new_name = HelpingFunctions::MakeNewName(
+    std::string new_name = HF::MakeNewName(
         SplitWords(old_name),
         project_.GetNecessaryStyle());
     old_new_names[old_name] = new_name;
@@ -13,9 +13,9 @@ Change::Change(Project& project) : project_(project) {
 
 std::vector<std::string> Change::SplitWords(std::string_view str) const {
   if (project_.GetOriginalStyle() == snake_case) {
-    return HelpingFunctions::SplitWordsSnakeCase(str);
+    return HF::SplitWordsSnakeCase(str);
   }
-  return HelpingFunctions::SplitWordsPascalOrCamel(str);
+  return HF::SplitWordsPascalOrCamel(str);
 }
 void Change::ChangeProject() {
   for (auto& [file_path, text] : project_.GetTexts()) {
