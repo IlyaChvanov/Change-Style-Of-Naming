@@ -15,3 +15,10 @@
         <li>Enter if you want to change the existing file or create a new one</li>
         <li>Confirm your input</li>
  </ol>
+
+### Examples
+![functions-command](pictures/change_func.jpg) ![](pictures/change_func(1).jpg)
+----------------------------------------------------------------
+![functions-command](pictures/change_class_first.jpg) 
+
+![](pictures/change_class(3).jpg) ![](pictures/change_class.jpg) 
