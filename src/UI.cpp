@@ -11,7 +11,7 @@ void UI::AskDirectoryPath() {
 }
 
 void UI::AskWhatToChange() {
-  cout << "Enter what you want to change: (works only 3rd)" << '\n';
+  cout << "Enter what you want to change: (works only 1st and 2nd)" << '\n';
   cout << "1: variable names" << '\n';
   cout << "2: function names" << '\n';
   cout << "3: class names" << '\n';
