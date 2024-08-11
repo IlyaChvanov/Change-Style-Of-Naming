@@ -2,7 +2,6 @@
 #define CHANGE_STYLE_OF_NAMING_SAVE_H
 
 #include <fstream>
-
 #include "project.h"
 
 class Save {

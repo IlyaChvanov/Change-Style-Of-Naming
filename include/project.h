@@ -22,7 +22,7 @@ struct ObjectsToChange {
 using Texts = std::unordered_map<std::filesystem::path, std::string>;
 class Project {
  public:
-  Project(UserInput& input);
+  explicit Project(UserInput& input);
   void FindAndPushVariables();
   void FindAndPushFunctions();
   void FindAndPushClasses();
@@ -36,6 +36,7 @@ class Project {
   WorkWFile GetWorkWFile() const;
   Texts& GetTexts();
   const std::unordered_set<std::string>& GetObjectsToChange() const;
+  const std::string& GetFilePathToChange() const;
 
  private:
   const UserInput& input_;

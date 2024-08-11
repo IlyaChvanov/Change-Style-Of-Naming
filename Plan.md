@@ -4,7 +4,7 @@
   - [x] set
   - [x] accordance enum and input 
   - [x] exceptions
-- [x] Parse directory to find all c++ textes
+- [x] Parse directory to find all c++ texts
 - [ ] Find things to change
   - [x] classes
   - [x] functions
@@ -20,4 +20,7 @@
   - [ ] don't change things with other original style
   - [ ] don't change includes when changing classes
 - [ ] Addition
-  - [ ] Change all files in project
+  - [ ] change all files in project
+    - [ ] change UI
+    - [ ] change Save
+  - [ ] start work with .exe file

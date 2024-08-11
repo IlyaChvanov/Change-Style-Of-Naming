@@ -67,4 +67,7 @@ const std::unordered_set<std::string>& Project::GetObjectsToChange() const {
   }
   return objects_.classes_;
 }
+const std::string& Project::GetFilePathToChange() const {
+  return input_.file_path;
+}
 
