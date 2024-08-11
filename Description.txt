@@ -1,0 +1,4 @@
+The program traversing the whole directory, saving filepathes and theirs texts in unordered map,
+during this it's searching for the definitions of classes, functions and variables using regular
+expressions and adding their names into set. Next it traverse through found names and matches
+old names with new ones. In the end we save the result
