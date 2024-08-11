@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "change.h"
-
+#include "save.h"
 using std::cin;
 int main() {
 
@@ -10,6 +10,7 @@ int main() {
   pr.FindAndPushClasses();
   pr.FindAndPushFunctions();
   auto change = Change(pr);
+  auto save = Save(pr);
   return 0;
 }
 

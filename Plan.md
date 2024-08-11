@@ -12,10 +12,12 @@
 - [x] Change
   - [x] split to words
   - [x] connect with necessary style 
-- [ ] Save
-  - [ ] make new file
-  - [ ] change current file 
-- [] Debug
-  - [] abbreviations mustn't parse as pascal_case;
-  - [] don't change things with other original style
-  - [] don't change includes when changing classes
+- [x] Save
+  - [x] make new file
+  - [x] change current file 
+- [ ] Debug
+  - [ ] abbreviations mustn't parse as pascal_case;
+  - [ ] don't change things with other original style
+  - [ ] don't change includes when changing classes
+- [ ] Addition
+  - [ ] Change all files in project

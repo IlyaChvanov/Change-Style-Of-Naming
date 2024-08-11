@@ -5,7 +5,7 @@
 
 #include "project.h"
 
-class Save {
+class Save{
  public:
   explicit Save(Project& project);
  private:

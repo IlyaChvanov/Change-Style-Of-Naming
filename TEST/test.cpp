@@ -5,9 +5,9 @@
 
 #include "project.h"
 
-class Save {
+class save{
  public:
-  explicit Save(Project& project);
+  explicit save(Project& project);
  private:
   Project& project_;
   void MakeFile();
