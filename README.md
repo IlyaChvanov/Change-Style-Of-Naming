@@ -1,11 +1,17 @@
 # Change style of naming
 ### This programm is going to change style of naming variables, functions and classes(for example PascalCase -> snake_case, snake_case -> camelCalse etc.)
 ### Code style https://google.github.io/styleguide/cppguide.html
-### At the moment parsing of variables is not definited
+### At the moment parsing of variables is not implemented
 
 ### How to work:
- Open .exe file, which provides command string interface
- - Firstly, enter the path of directory with all declarations
- - Secondly, choose if you want to change variables, function names, class names, or all three at once
- - Thirdly, choose which style you want to get 
- - Fourthly, choose if you want to create new file or change the current 
+ <ol>
+        <li>Download project(git clone https://github.com/IlyaChvanov/change-style-of-naming.git) </li>
+        <li>Run it</li>
+        <li>Enter the directory path</li>
+        <li>Enter the path of the file yuo want to change</li>
+        <li>Enter what you whant to change</li>
+        <li>Enter necessary style</li>
+        <li>Enter the original style</li>
+        <li>Enter if you want to change the existing file or create a new one</li>
+        <li>Confirm your input</li>
+ </ol>
