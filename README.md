@@ -21,4 +21,4 @@
 ----------------------------------------------------------------
 ![functions-command](pictures/change_class_first.jpg) 
 
-![](pictures/change_class(3).jpg) ![](pictures/change_class.jpg) 
+![](pictures/image.jpg)
