@@ -1,4 +1,5 @@
 #include "save.h"
+
 Save::Save(Project& project) :project_(project) {
   if (project_.GetWorkWFile() == create_new) {
     MakeFile();
@@ -6,6 +7,7 @@ Save::Save(Project& project) :project_(project) {
     ChangeFile();
   }
 }
+
 void Save::MakeFile() {
   for (auto& [path, text] : project_.GetTexts()) {
     if (path == project_.GetFilePathToChange()) {
@@ -17,6 +19,7 @@ void Save::MakeFile() {
     }
   }
 }
+
 void Save::ChangeFile() {
   for (auto& [path, text] : project_.GetTexts()) {
     if (path == project_.GetFilePathToChange()) {
