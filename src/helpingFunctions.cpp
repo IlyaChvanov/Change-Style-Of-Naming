@@ -39,14 +39,11 @@ void GetFiles(std::string& root, std::vector<std::filesystem::path>& files) {
 Texts MakeTextsFromFiles(const std::vector<std::filesystem::path>& files) {
   Texts texts;
   texts.reserve(files.size());
-  for (auto& file : files) {
-    texts[file] = GetTextFromFile(file);
-  }
+  std::transform(files.begin(), files.end(), std::inserter(texts, texts.end()),
+                 [](const std::filesystem::path& file) {
+                   return std::make_pair(file, GetTextFromFile(file));
+                 });
   return texts;
-}
-
-void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing) {
-  std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
 }
 
 std::vector<std::string> SplitWordsSnakeCase(std::string_view str) {
@@ -66,28 +63,32 @@ std::vector<std::string> SplitWordsSnakeCase(std::string_view str) {
   return words;
 }
 
+void LogForFindings(const std::sregex_iterator& it, int pos_of_pushing) {
+  std::cout << "string: " << it->str(0) << " name: " << it->str(pos_of_pushing) << std::endl;
+}
+
 void LogForWordsSpliting(const std::vector<std::string>& words,
                          std::string_view str) {
   std::cout << "Original word is: " << str;
-  for (const auto& word : words) {
-    std::cout << word << ' ';
-  }
+  std::copy(words.begin(), words.end(),
+            std::ostream_iterator<std::string>(std::cout, " "));
 }
 
 std::vector<std::string> SplitWordsPascalOrCamel(std::string_view str) {
-  std::string word;
   std::vector<std::string> words;
-  for (auto it = str.begin(); it != str.end(); it++) {
-    if (*it != tolower(*it) && it != str.begin()) {
-      words.push_back(word);
+  words.reserve(str.size());
+
+  std::string word;
+  for (char ch : str) {
+    if (std::isupper(static_cast<unsigned char>(ch)) && !word.empty()) {
+      words.push_back(std::move(word));
       word.clear();
-      word += static_cast<char>(tolower(*it));
-      continue;
     }
-    word += static_cast<char>(tolower(*it));
+    word += static_cast<char>(std::tolower((ch)));
   }
+
   if (!word.empty()) {
-    words.push_back(word);
+    words.push_back(std::move(word));
   }
   LogForWordsSpliting(words, str);
   words.shrink_to_fit();
@@ -95,14 +96,22 @@ std::vector<std::string> SplitWordsPascalOrCamel(std::string_view str) {
 }
 
 std::string MakeSnakeCase(const std::vector<std::string>& splited) {
-  std::string result;
-  for (const auto& word : splited) {
-    for (auto c : word) {
-      result += c;
-    }
-    result += '_';
+  if (splited.empty()) {
+    return "";
   }
-  result.erase(result.end() - 1);
+
+  std::string result;
+  size_t total_size = 0;
+  for (const auto& word : splited) {
+    total_size += word.size() + 1;
+  }
+  result.reserve(total_size - 1);
+
+  for (const auto& word : splited) {
+    result.append(word).append("_");
+  }
+
+  result.pop_back();
   return result;
 }
 
