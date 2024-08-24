@@ -2,6 +2,11 @@
 
 namespace HF {
 
+bool IsSuitablePath(const std::filesystem::directory_entry& file) {
+  return (std::filesystem::is_directory(file) && !file.path().string().ends_with("cmake-build-debug")
+          && !file.path().string().ends_with(".idea"));
+}
+
 std::string GetTextFromFile(const std::filesystem::path& file_path) {
   std::ifstream file(file_path);
   std::string to_return;
@@ -16,8 +21,7 @@ bool IsProgrammingFile(const std::string& path) {
 void GetFiles(std::string& root, std::vector<std::filesystem::path>& files) {
   try {
     for (auto& file : std::filesystem::directory_iterator(root)) {
-      if (std::filesystem::is_directory(file) && !file.path().string().ends_with("cmake-build-debug")
-          && !file.path().string().ends_with(".idea")) {
+      if (IsSuitablePath(file)) {
         std::string fp = file.path().string();
         GetFiles(fp, files);
       } else if (IsProgrammingFile(file.path().string())) {
