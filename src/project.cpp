@@ -5,6 +5,22 @@ Project::Project(UserInput& input) : input_(input) {
   std::vector<std::filesystem::path> files;
   HF::GetFiles(input.dir_path, files);
   texts_from_files_ = HF::MakeTextsFromFiles(files);
+  switch (input_.what_to_change) {
+    case variable_names:
+      FindAndPushVariables();
+      break;
+    case function_names:
+      FindAndPushFunctions();
+      break;
+    case class_names:
+      FindAndPushClasses();
+      break;
+    case all:
+      FindAndPushVariables();
+      FindAndPushFunctions();
+      FindAndPushClasses();
+      break;
+  }
 }
 
 void Project::FindAndPush(const std::regex& regex,
