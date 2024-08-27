@@ -5,10 +5,10 @@
   - [x] accordance enum and input 
   - [x] exceptions
 - [x] Parse directory to find all c++ texts
-- [ ] Find things to change
+- [x] Find things to change
   - [x] classes
   - [x] functions
-  - [ ] variables
+  - [x] variables
 - [x] Change
   - [x] split to words
   - [x] connect with necessary style 
