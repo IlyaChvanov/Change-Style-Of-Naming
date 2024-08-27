@@ -16,7 +16,7 @@
   - [x] make new file
   - [x] change current file 
 - [ ] Debug
-  - [ ] abbreviations mustn't parse as pascal_case;
+  - [ ] abbreviations mustn't parse as PascalCase;
   - [ ] don't change things with other original style
   - [ ] don't change includes when changing classes
 - [ ] Addition
