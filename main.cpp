@@ -4,11 +4,8 @@
 #include "save.h"
 using std::cin;
 int main() {
-
   auto input = UI::Begin();
   auto pr = Project(input);
-  pr.FindAndPushClasses();
-  pr.FindAndPushFunctions();
   auto change = Change(pr);
   auto save = Save(pr);
   return 0;
