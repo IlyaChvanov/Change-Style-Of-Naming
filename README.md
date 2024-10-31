@@ -1,6 +1,6 @@
 # Change style of naming
 ### This program changes style of naming variables, functions and classes(for example PascalCase -> snake_case, snake_case -> camelCalse etc.)
-### Code style https://google.github.io/styleguide/cppguide.html
+### Code style - https://google.github.io/styleguide/cppguide.html
 
 ### How to work:
  <ol>
