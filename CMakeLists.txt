@@ -29,9 +29,7 @@ add_executable(change_style_of_naming main.cpp
         include/helpingFunctions.h
         src/helpingFunctions.cpp
         src/helpingFunctions.cpp
-        ui/mainwindow.cpp
-        ui/mainwindow.h
-        ui/mainwindow.ui
+        ui/include/myAppWindow.h
 )
 
 target_link_libraries(${PROJECT_NAME}
