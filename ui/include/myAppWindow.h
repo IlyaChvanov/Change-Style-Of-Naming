@@ -20,27 +20,27 @@ public:
         setWindowTitle("Change style of naming");
         setMinimumSize(600, 600);
 
-        auto* centralWidget = new QWidget(this);
-        auto* mainLayout = new QVBoxLayout(centralWidget);
-        mainLayout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        auto* central_widget = new QWidget(this);
+        auto* main_layout = new QVBoxLayout(central_widget);
+        main_layout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
         auto* formLayout = new QVBoxLayout();
 
-        auto* label = new QLabel("Enter the path of file you want to change", centralWidget);
+        auto* label = new QLabel("Enter the path of file you want to change", central_widget);
         label->setAlignment(Qt::AlignCenter);
         formLayout->addWidget(label);
 
-        auto* searchLineEdit = new QLineEdit(centralWidget);
-        formLayout->addWidget(searchLineEdit);
+        auto* search_line_edit = new QLineEdit(central_widget);
+        formLayout->addWidget(search_line_edit);
 
-        auto* send_button = new QPushButton("accept", centralWidget);
+        auto* send_button = new QPushButton("accept", central_widget);
         formLayout->addWidget(send_button);
-        mainLayout->addLayout(formLayout);
+        main_layout->addLayout(formLayout);
 
-        mainLayout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-        setCentralWidget(centralWidget);
+        main_layout->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+        setCentralWidget(central_widget);
 
-        connect(send_button, &QPushButton::clicked, [searchLineEdit, &input]() {
-            input.file_path = searchLineEdit->text().toStdString();
+        connect(send_button, &QPushButton::clicked, [search_line_edit, &input]() {
+            input.file_path = search_line_edit->text().toStdString();
             qDebug() << input.file_path;
         });
     }
