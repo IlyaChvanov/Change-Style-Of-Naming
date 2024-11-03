@@ -67,7 +67,7 @@ public:
                 form_layout->addWidget(send_button);
             } else if (step == 2) {
                 input.what_to_change = static_cast<WhatToChange>(combo_box->currentIndex() + 1);
-                qDebug() << static_cast<WhatToChange>(combo_box->currentIndex() + 1) << '\n';
+                qDebug() << UI::what_to_change_.at(input.what_to_change);
                 label->setText("Which style do you need");
                 combo_box->clear();
                 combo_box->addItem("snake_case");
@@ -75,7 +75,7 @@ public:
                 combo_box->addItem("PascalCase");
             } else if (step == 3) {
                 input.necessary_style = static_cast<Style>(combo_box->currentIndex() + 1);
-                qDebug() << static_cast<Style>(combo_box->currentIndex() + 1) << '\n';
+                qDebug() << UI::style_.at(input.necessary_style);
                 label->setText("What is the original style");
                 combo_box->clear();
                 combo_box->addItem("snake_case");
@@ -83,14 +83,14 @@ public:
                 combo_box->addItem("PascalCase");
             } else if (step == 4) {
                 input.original_style = static_cast<Style>(combo_box->currentIndex() + 1);
-                qDebug() << static_cast<Style>(combo_box->currentIndex() + 1) << '\n';
+                qDebug() << UI::style_.at(input.original_style);
                 label->setText("Create new file or change the current");
                 combo_box->clear();
                 combo_box->addItem("create new");
                 combo_box->addItem("change current");
             } else if (step == 5) {
                 input.change_or_create = static_cast<WorkWFile>(combo_box->currentIndex() + 1);
-                qDebug() << static_cast<WorkWFile>(combo_box->currentIndex() + 1) << '\n';
+                qDebug() << UI::work_w_file_.at(input.change_or_create);
                 combo_box->close();
                 search_line_edit->close();
                 send_button->close();
