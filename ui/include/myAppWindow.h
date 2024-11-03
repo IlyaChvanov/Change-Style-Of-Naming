@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QLineEdit>
 
 #include <QMainWindow>
@@ -90,6 +91,24 @@ public:
             } else if (step == 5) {
                 input.change_or_create = static_cast<WorkWFile>(combo_box->currentIndex() + 1);
                 qDebug() << static_cast<WorkWFile>(combo_box->currentIndex() + 1) << '\n';
+                combo_box->close();
+                search_line_edit->close();
+                send_button->close();
+
+                label->setText(("Is everything correct? "
+                                "\n Project path: " + input.dir_path
+                                +"\nFile: " + input.file_path
+                                +"\nYou want to change " + UI::what_to_change_.at(input.what_to_change)
+                                +"\nYou need " + UI::style_.at(input.necessary_style)
+                                +"\nThe original style is " + UI::style_.at(input.original_style)
+                                +"\nYou want to " + UI::work_w_file_.at(input.change_or_create)).data());
+
+                auto* buttons =  new QHBoxLayout;
+                auto* yes_button = new QPushButton("yes", central_widget);
+                auto* no_button = new QPushButton("no", central_widget);
+                buttons->addWidget(yes_button);
+                buttons->addWidget(no_button);
+                main_layout->addLayout(buttons);
             }
             search_line_edit->clear();
             step++;

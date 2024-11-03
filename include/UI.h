@@ -49,6 +49,7 @@ class UI {
 
   static UserInput Begin();
 
+  friend class MyAppWindow;
   //anyway I have to catch (...)  in UI.cpp because there are several of them and I can't catch them by this and set necessary message
   class IncorrectInput : public std::exception {
    private:
