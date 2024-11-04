@@ -13,9 +13,6 @@ int main(int argc, char** argv) {
   UserInput input;
   QApplication app(argc, argv);
   MyAppWindow window(input);
-  //auto pr = Project(input);
-  //auto change = Change(pr);
-  //auto save = Save(pr);
   window.show();
 
   return app.exec();
