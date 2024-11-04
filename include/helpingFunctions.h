@@ -13,6 +13,7 @@ void LogForWordsSpliting(const std::vector<std::string>& words,
 
 std::string GetTextFromFile(const std::filesystem::path& file_path);
 bool IsProgrammingFile(const std::string& path);
+bool IsSuitablePath(const  std::filesystem::directory_entry& file);
 Texts MakeTextsFromFiles(const std::vector<std::filesystem::path>& files);
 void GetFiles(std::string& root, std::vector<std::filesystem::path>& files);
 std::vector<std::string> SplitWordsSnakeCase(std::string_view str);

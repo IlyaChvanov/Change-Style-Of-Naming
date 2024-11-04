@@ -12,6 +12,7 @@
 #include <save.h>
 #include <project.h>
 #include <change.h>
+#include <helpingFunctions.h>
 #include "UI.h"
 
 static int step = 0;
@@ -67,17 +68,27 @@ private:
     connect(send_button, &QPushButton::clicked, [=]() {
       if (step == 0) {
         input.dir_path = search_line_edit->text().toStdString();
-        qDebug() << "root is " << input.dir_path;
-        label->setText("Enter the file you want to change");
+        if (!std::filesystem::is_directory(input.dir_path)) {
+          label->setText("it is not a directory try again");
+          step = -1;
+        } else {
+          qDebug() << "root is " << input.dir_path;
+          label->setText("Enter the file you want to change");
+        }
       } else if (step == 1) {
         input.file_path = search_line_edit->text().toStdString();
-        search_line_edit->close();
-        qDebug() << "file is: " << input.file_path;
-        label->setText("What do you want to change");
-        form_layout->addWidget(combo_box);
-        combo_box->show();
-        form_layout->removeWidget(send_button);
-        form_layout->addWidget(send_button);
+        if (!std::filesystem::exists(input.file_path)) {
+          label->setText("file doesn't exist, try again");
+          step = 0;
+        } else {
+          search_line_edit->close();
+          qDebug() << "file is: " << input.file_path;
+          label->setText("What do you want to change");
+          form_layout->addWidget(combo_box);
+          combo_box->show();
+          form_layout->removeWidget(send_button);
+          form_layout->addWidget(send_button);
+        }
       } else if (step == 2) {
         input.what_to_change = static_cast<WhatToChange>(combo_box->currentIndex() + 1);
         qDebug() << UI::what_to_change_.at(input.what_to_change);
