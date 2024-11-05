@@ -158,6 +158,7 @@ private:
     });
 
     connect(no_button, &QPushButton::clicked, [this]() {
+      delete central_widget;
       Begin();
     });
   }
